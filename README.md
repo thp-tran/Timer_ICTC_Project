@@ -40,6 +40,5 @@ By configuring timer registers, the microcontroller can perform periodic operati
 ---
 
 ### 1.3. Block Diagram
-```markdown
 #### 🧱 Timer IP Block Diagram
 ![Timer Block Diagram](docs/timer_block_diagram.png)
