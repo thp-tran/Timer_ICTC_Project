@@ -1,0 +1,102 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit apb_pslverr_chk.ucdb; log -r /*;run -all} -l apb_pslverr_chk.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit apb_pslverr_chk.ucdb 
+#  log -r /* 
+# run -all 
+# =====================================
+# === Test Case: Pslverr check === ====
+# =====================================
+# Pslverr access is ON
+# t=       100 [TB_WRITE]: addr=00000000 data=00000900
+# t=       475 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=       475 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=       475 [TB_WRITE]: addr=00000000 data=00000a00
+# t=       875 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=       875 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=       875 [TB_WRITE]: addr=00000000 data=00000b00
+# t=      1275 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=      1275 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      1275 [TB_WRITE]: addr=00000000 data=00000c00
+# t=      1675 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=      1675 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      1675 [TB_WRITE]: addr=00000000 data=00000d00
+# t=      2075 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=      2075 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      2075 [TB_WRITE]: addr=00000000 data=00000e00
+# t=      2475 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=      2475 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      2475 [TB_WRITE]: addr=00000000 data=00000f00
+# t=      2875 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=      2875 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# Pslverr access is OFF
+# t=      2875 [TB_WRITE]: addr=00000000 data=00000800
+# t=      3275 [TB_READ]: addr=00000000 rdata=00000800
+# ------------------------------------------------
+# t=      3275 PASS: rdata = 00000800 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      3275 [TB_WRITE]: addr=00000000 data=00000001
+# Pslverr access is ON
+# t=      3476 [TB_WRITE]: addr=00000000 data=00000103
+# t=      3875 [TB_READ]: addr=00000000 rdata=00000001
+# ------------------------------------------------
+# t=      3875 PASS: rdata = 00000001 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      3875 [TB_WRITE]: addr=00000000 data=00000100
+# t=      4275 [TB_READ]: addr=00000000 rdata=00000001
+# ------------------------------------------------
+# t=      4275 PASS: rdata = 00000001 at addr 00000000 is correct
+# ------------------------------------------------
+# t=      4275 [TB_WRITE]: addr=00000000 data=00000002
+# Pslverr access is OFF
+# t=      4675 [TB_READ]: addr=00000000 rdata=00000001
+# ------------------------------------------------
+# t=      4675 PASS: rdata = 00000001 at addr 00000000 is correct
+# ------------------------------------------------
+# clear timer_en
+# t=      4675 [TB_WRITE]: addr=00000000 data=00000000
+# t=      4876 [TB_WRITE]: addr=00000000 data=00000102
+# t=      5275 [TB_READ]: addr=00000000 rdata=00000102
+# ------------------------------------------------
+# t=      5275 PASS: rdata = 00000102 at addr 00000000 is correct
+# ------------------------------------------------
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 5375 ns  Iteration: 0  Instance: /test_bench

@@ -1,0 +1,63 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit apb_multiple_access.ucdb; log -r /*;run -all} -l apb_multiple_access.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit apb_multiple_access.ucdb 
+#  log -r /* 
+# run -all 
+# =========================================
+# === Test Case: APB Multi-access Test ====
+# =========================================
+# multiple APB access
+# write TDR0 & write TDR1
+# normal read
+# t=       625 [TB_READ]: addr=00000004 rdata=11111111
+# ------------------------------------------------
+# t=       625 PASS: rdata = 11111111 at addr 00000004 is correct
+# ------------------------------------------------
+# t=       825 [TB_READ]: addr=00000008 rdata=22222222
+# ------------------------------------------------
+# t=       825 PASS: rdata = 22222222 at addr 00000008 is correct
+# ------------------------------------------------
+# normal write
+# t=       825 [TB_WRITE]: addr=00000004 data=33333333
+# t=      1026 [TB_WRITE]: addr=00000008 data=44444444
+# multiple read
+# ------------------------------------------------
+# t=      1376 PASS: rdata = 33333333 at addr 00000004 is correct
+# ------------------------------------------------
+# ------------------------------------------------
+# t=      1526 PASS: rdata = 44444444 at addr 00000008 is correct
+# ------------------------------------------------
+# w-r(TDR0)-w-r(TDR1)
+# ------------------------------------------------
+# t=      1876 PASS: rdata = 55555555 at addr 00000004 is correct
+# ------------------------------------------------
+# ------------------------------------------------
+# t=      2176 PASS: rdata = 66666666 at addr 00000008 is correct
+# ------------------------------------------------
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 2326 ns  Iteration: 0  Instance: /test_bench

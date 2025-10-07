@@ -1,0 +1,2330 @@
+Coverage Report by file with details
+
+File: ../rtl/apb_slave.v
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms            11         9         2      81.8
+
+================================Expression Details================================
+
+Expression Coverage for file ../rtl/apb_slave.v --
+
+
+----------------Focused Expression View-----------------
+Line       35 Item    1     assign wr_en   = pready_r && psel && penable && pwrite;
+Expression totals: 3 of 4 input terms covered = 75.0%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+     penable         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:         13  pready_r_0            { 0--- }                      
+  Row   2:         12  pready_r_1            { 1111 }                      
+  Row   3:         13  psel_0                { 10-- }                      
+  Row   4:         12  psel_1                { 1111 }                      
+  Row   5:    ***0***  penable_0             { 110- }                      
+  Row   6:         12  penable_1             { 1111 }                      
+  Row   7:         13  pwrite_0              { 1110 }                      
+  Row   8:         12  pwrite_1              { 1111 }                      
+
+NOTE:
+  * Order of matching input pattern values: {pready_r,psel,penable,pwrite}
+
+----------------Focused Expression View-----------------
+Line       36 Item    1     assign rd_en   = pready_r && psel && penable && !pwrite;
+Expression totals: 3 of 4 input terms covered = 75.0%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+     penable         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:         13  pwrite_0              { 0111 }                      
+  Row   2:         12  pwrite_1              { 1--- }                      
+  Row   3:         13  pready_r_0            { 00-- }                      
+  Row   4:         13  pready_r_1            { 0111 }                      
+  Row   5:         13  psel_0                { 010- }                      
+  Row   6:         13  psel_1                { 0111 }                      
+  Row   7:    ***0***  penable_0             { 0110 }                      
+  Row   8:         13  penable_1             { 0111 }                      
+
+NOTE:
+  * Order of matching input pattern values: {pwrite,pready_r,psel,penable}
+
+
+
+File: ../rtl/counter_ctrl.v
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           22        21         1      95.4
+
+================================Statement Details================================
+
+Statement Coverage for file ../rtl/counter_ctrl.v --
+
+    27              1                     default : limit = 8'd0;
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        22        21         1      95.4
+
+================================Branch Details================================
+
+Branch Coverage for file ../rtl/counter_ctrl.v --
+
+------------------------------------CASE Branch------------------------------------
+    27              1                    ***0***                     default : limit = 8'd0;
+Branch totals: 9 hits of 10 branches = 90.0%
+
+
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms            11        10         1      90.9
+
+================================Expression Details================================
+
+Expression Coverage for file ../rtl/counter_ctrl.v --
+
+
+----------------Focused Expression View-----------------
+Line       51 Item    1     assign ctrl_mode = cnt_limit_r == limit && timer_en && div_en && !(halt_req);
+Expression totals: 3 of 4 input terms covered = 75.0%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+                  div_en         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                Matching input patterns       
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:         13  (cnt_limit_r == limit)_0  { 0--- }                      
+  Row   2:          2  (cnt_limit_r == limit)_1  { 1110 }                      
+  Row   3:          2  timer_en_0                { 10-- }                      
+  Row   4:          2  timer_en_1                { 1110 }                      
+  Row   5:    ***0***  div_en_0                  { 110- }                      
+  Row   6:          2  div_en_1                  { 1110 }                      
+  Row   7:          2  halt_req_0                { 1110 }                      
+  Row   8:          2  halt_req_1                { 1111 }                      
+
+NOTE:
+  * Order of matching input pattern values: {(cnt_limit_r == limit),timer_en,div_en,halt_req}
+
+
+
+
+File: ../rtl/reg_file.v
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                   1132       728       404      64.3
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../rtl/reg_file.v --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+         23                               pready_r          13          13      100.00 
+         24                             pready_tmp          13          13      100.00 
+         15                             timer_en_d           7           7      100.00 
+         16                               cnt_r[9]           8          10      100.00 
+         16                               cnt_r[8]           6          10      100.00 
+         16                               cnt_r[7]           5           6      100.00 
+         16                               cnt_r[6]           6           7      100.00 
+         16                              cnt_r[63]           3           3      100.00 
+         16                              cnt_r[62]           4           6      100.00 
+         16                              cnt_r[61]           5           5      100.00 
+         16                              cnt_r[60]           3           3      100.00 
+         16                               cnt_r[5]           7           9      100.00 
+         16                              cnt_r[59]           3           3      100.00 
+         16                              cnt_r[58]           4           6      100.00 
+         16                              cnt_r[57]           5           5      100.00 
+         16                              cnt_r[56]           3           3      100.00 
+         16                              cnt_r[55]           3           3      100.00 
+         16                              cnt_r[54]           4           6      100.00 
+         16                              cnt_r[53]           5           5      100.00 
+         16                              cnt_r[52]           4           4      100.00 
+         16                              cnt_r[51]           3           3      100.00 
+         16                              cnt_r[50]           4           6      100.00 
+         16                               cnt_r[4]           7          11      100.00 
+         16                              cnt_r[49]           5           5      100.00 
+         16                              cnt_r[48]           4           4      100.00 
+         16                              cnt_r[47]           3           3      100.00 
+         16                              cnt_r[46]           4           6      100.00 
+         16                              cnt_r[45]           5           5      100.00 
+         16                              cnt_r[44]           4           4      100.00 
+         16                              cnt_r[43]           3           3      100.00 
+         16                              cnt_r[42]           4           6      100.00 
+         16                              cnt_r[41]           5           5      100.00 
+         16                              cnt_r[40]           4           4      100.00 
+         16                               cnt_r[3]           7           8      100.00 
+         16                              cnt_r[39]           3           3      100.00 
+         16                              cnt_r[38]           4           6      100.00 
+         16                              cnt_r[37]           4           4      100.00 
+         16                              cnt_r[36]           4           4      100.00 
+         16                              cnt_r[35]           3           3      100.00 
+         16                              cnt_r[34]           4           6      100.00 
+         16                              cnt_r[33]           4           4      100.00 
+         16                              cnt_r[32]           5           5      100.00 
+         16                              cnt_r[31]           4           5      100.00 
+         16                              cnt_r[30]           5           6      100.00 
+         16                               cnt_r[2]           7           8      100.00 
+         16                              cnt_r[29]           7           9      100.00 
+         16                              cnt_r[28]           4           8      100.00 
+         16                              cnt_r[27]           4           5      100.00 
+         16                              cnt_r[26]           5           6      100.00 
+         16                              cnt_r[25]           7           9      100.00 
+         16                              cnt_r[24]           4           8      100.00 
+         16                              cnt_r[23]           4           5      100.00 
+         16                              cnt_r[22]           5           6      100.00 
+         16                              cnt_r[21]           7           9      100.00 
+         16                              cnt_r[20]           5           9      100.00 
+         16                               cnt_r[1]           9          11      100.00 
+         16                              cnt_r[19]           4           5      100.00 
+         16                              cnt_r[18]           5           6      100.00 
+         16                              cnt_r[17]           7           9      100.00 
+         16                              cnt_r[16]           5           9      100.00 
+         16                              cnt_r[15]           4           5      100.00 
+         16                              cnt_r[14]           5           6      100.00 
+         16                              cnt_r[13]           7           9      100.00 
+         16                              cnt_r[12]           5           9      100.00 
+         16                              cnt_r[11]           4           5      100.00 
+         16                              cnt_r[10]           5           6      100.00 
+         16                               cnt_r[0]           7          11      100.00 
+         17                             cnt_tmp[9]           8          10      100.00 
+         17                             cnt_tmp[8]           6          10      100.00 
+         17                             cnt_tmp[7]           5           6      100.00 
+         17                             cnt_tmp[6]           6           7      100.00 
+         17                            cnt_tmp[63]           3           3      100.00 
+         17                            cnt_tmp[62]           4           6      100.00 
+         17                            cnt_tmp[61]           5           5      100.00 
+         17                            cnt_tmp[60]           3           3      100.00 
+         17                             cnt_tmp[5]           7           9      100.00 
+         17                            cnt_tmp[59]           3           3      100.00 
+         17                            cnt_tmp[58]           4           6      100.00 
+         17                            cnt_tmp[57]           5           5      100.00 
+         17                            cnt_tmp[56]           3           3      100.00 
+         17                            cnt_tmp[55]           3           3      100.00 
+         17                            cnt_tmp[54]           4           6      100.00 
+         17                            cnt_tmp[53]           5           5      100.00 
+         17                            cnt_tmp[52]           4           4      100.00 
+         17                            cnt_tmp[51]           3           3      100.00 
+         17                            cnt_tmp[50]           4           6      100.00 
+         17                             cnt_tmp[4]           7          11      100.00 
+         17                            cnt_tmp[49]           5           5      100.00 
+         17                            cnt_tmp[48]           4           4      100.00 
+         17                            cnt_tmp[47]           3           3      100.00 
+         17                            cnt_tmp[46]           4           6      100.00 
+         17                            cnt_tmp[45]           5           5      100.00 
+         17                            cnt_tmp[44]           4           4      100.00 
+         17                            cnt_tmp[43]           3           3      100.00 
+         17                            cnt_tmp[42]           4           6      100.00 
+         17                            cnt_tmp[41]           5           5      100.00 
+         17                            cnt_tmp[40]           4           4      100.00 
+         17                             cnt_tmp[3]           7           8      100.00 
+         17                            cnt_tmp[39]           3           3      100.00 
+         17                            cnt_tmp[38]           4           6      100.00 
+         17                            cnt_tmp[37]           4           4      100.00 
+         17                            cnt_tmp[36]           4           4      100.00 
+         17                            cnt_tmp[35]           3           3      100.00 
+         17                            cnt_tmp[34]           4           6      100.00 
+         17                            cnt_tmp[33]           4           4      100.00 
+         17                            cnt_tmp[32]           5           5      100.00 
+         17                            cnt_tmp[31]           4           5      100.00 
+         17                            cnt_tmp[30]           5           6      100.00 
+         17                             cnt_tmp[2]           7           8      100.00 
+         17                            cnt_tmp[29]           7           9      100.00 
+         17                            cnt_tmp[28]           4           8      100.00 
+         17                            cnt_tmp[27]           4           5      100.00 
+         17                            cnt_tmp[26]           5           6      100.00 
+         17                            cnt_tmp[25]           7           9      100.00 
+         17                            cnt_tmp[24]           4           8      100.00 
+         17                            cnt_tmp[23]           4           5      100.00 
+         17                            cnt_tmp[22]           5           6      100.00 
+         17                            cnt_tmp[21]           7           9      100.00 
+         17                            cnt_tmp[20]           5           9      100.00 
+         17                             cnt_tmp[1]           9          11      100.00 
+         17                            cnt_tmp[19]           4           5      100.00 
+         17                            cnt_tmp[18]           5           6      100.00 
+         17                            cnt_tmp[17]           7           9      100.00 
+         17                            cnt_tmp[16]           5           9      100.00 
+         17                            cnt_tmp[15]           4           5      100.00 
+         17                            cnt_tmp[14]           5           6      100.00 
+         17                            cnt_tmp[13]           7           9      100.00 
+         17                            cnt_tmp[12]           5           9      100.00 
+         17                            cnt_tmp[11]           4           5      100.00 
+         17                            cnt_tmp[10]           5           6      100.00 
+         17                             cnt_tmp[0]           7          11      100.00 
+         18                             cnt_nxt[9]           8          10      100.00 
+         18                             cnt_nxt[8]           6          10      100.00 
+         18                             cnt_nxt[7]           5           6      100.00 
+         18                             cnt_nxt[6]           6           7      100.00 
+         18                            cnt_nxt[63]           3           3      100.00 
+         18                            cnt_nxt[62]           4           6      100.00 
+         18                            cnt_nxt[61]           5           5      100.00 
+         18                            cnt_nxt[60]           3           3      100.00 
+         18                             cnt_nxt[5]           7           9      100.00 
+         18                            cnt_nxt[59]           3           3      100.00 
+         18                            cnt_nxt[58]           4           6      100.00 
+         18                            cnt_nxt[57]           5           5      100.00 
+         18                            cnt_nxt[56]           3           3      100.00 
+         18                            cnt_nxt[55]           3           3      100.00 
+         18                            cnt_nxt[54]           4           6      100.00 
+         18                            cnt_nxt[53]           5           5      100.00 
+         18                            cnt_nxt[52]           4           4      100.00 
+         18                            cnt_nxt[51]           3           3      100.00 
+         18                            cnt_nxt[50]           4           6      100.00 
+         18                             cnt_nxt[4]           7          11      100.00 
+         18                            cnt_nxt[49]           5           5      100.00 
+         18                            cnt_nxt[48]           4           4      100.00 
+         18                            cnt_nxt[47]           3           3      100.00 
+         18                            cnt_nxt[46]           4           6      100.00 
+         18                            cnt_nxt[45]           5           5      100.00 
+         18                            cnt_nxt[44]           4           4      100.00 
+         18                            cnt_nxt[43]           3           3      100.00 
+         18                            cnt_nxt[42]           4           6      100.00 
+         18                            cnt_nxt[41]           5           5      100.00 
+         18                            cnt_nxt[40]           4           4      100.00 
+         18                             cnt_nxt[3]           7           8      100.00 
+         18                            cnt_nxt[39]           3           3      100.00 
+         18                            cnt_nxt[38]           4           6      100.00 
+         18                            cnt_nxt[37]           4           4      100.00 
+         18                            cnt_nxt[36]           4           4      100.00 
+         18                            cnt_nxt[35]           3           3      100.00 
+         18                            cnt_nxt[34]           4           6      100.00 
+         18                            cnt_nxt[33]           4           4      100.00 
+         18                            cnt_nxt[32]           5           5      100.00 
+         18                            cnt_nxt[31]           4           5      100.00 
+         18                            cnt_nxt[30]           5           6      100.00 
+         18                             cnt_nxt[2]           7           8      100.00 
+         18                            cnt_nxt[29]           7           9      100.00 
+         18                            cnt_nxt[28]           4           8      100.00 
+         18                            cnt_nxt[27]           4           5      100.00 
+         18                            cnt_nxt[26]           5           6      100.00 
+         18                            cnt_nxt[25]           7           9      100.00 
+         18                            cnt_nxt[24]           4           8      100.00 
+         18                            cnt_nxt[23]           4           5      100.00 
+         18                            cnt_nxt[22]           5           6      100.00 
+         18                            cnt_nxt[21]           7           9      100.00 
+         18                            cnt_nxt[20]           5           9      100.00 
+         18                             cnt_nxt[1]           9          11      100.00 
+         18                            cnt_nxt[19]           4           5      100.00 
+         18                            cnt_nxt[18]           5           6      100.00 
+         18                            cnt_nxt[17]           7           9      100.00 
+         18                            cnt_nxt[16]           5           9      100.00 
+         18                            cnt_nxt[15]           4           5      100.00 
+         18                            cnt_nxt[14]           5           6      100.00 
+         18                            cnt_nxt[13]           7           9      100.00 
+         18                            cnt_nxt[12]           5           9      100.00 
+         18                            cnt_nxt[11]           4           5      100.00 
+         18                            cnt_nxt[10]           5           6      100.00 
+         18                             cnt_nxt[0]           7          11      100.00 
+         19                               tdr1_sel           8           8      100.00 
+         19                               tdr0_sel          10          10      100.00 
+          7                             timer_en_d           7           7      100.00 
+          8                           default_mode           7           7      100.00 
+          9                               limit[7]           1           2      100.00 
+          9                               limit[6]           1           2      100.00 
+          9                               limit[5]           1           2      100.00 
+          9                               limit[4]           2           3      100.00 
+          9                               limit[3]           2           3      100.00 
+          9                               limit[2]           2           3      100.00 
+          9                               limit[1]           2           4      100.00 
+          9                               limit[0]           2           2      100.00 
+         14                              ctrl_mode           2           2      100.00 
+         35                       cnt_limit_tmp[7]           2           2      100.00 
+         35                       cnt_limit_tmp[6]           2           2      100.00 
+         35                       cnt_limit_tmp[5]           2           2      100.00 
+         35                       cnt_limit_tmp[4]           3           3      100.00 
+         35                       cnt_limit_tmp[3]           3           3      100.00 
+         35                       cnt_limit_tmp[2]           3           3      100.00 
+         35                       cnt_limit_tmp[1]           3           3      100.00 
+         35                       cnt_limit_tmp[0]           3           3      100.00 
+         36                         cnt_limit_r[7]           2           2      100.00 
+         36                         cnt_limit_r[6]           2           2      100.00 
+         36                         cnt_limit_r[5]           2           2      100.00 
+         36                         cnt_limit_r[4]           3           3      100.00 
+         36                         cnt_limit_r[3]           3           3      100.00 
+         36                         cnt_limit_r[2]           3           3      100.00 
+         36                         cnt_limit_r[1]           3           3      100.00 
+         36                         cnt_limit_r[0]           3           3      100.00 
+         37                             reg_sel[7]           6           6      100.00 
+         37                             reg_sel[6]           5           5      100.00 
+         37                             reg_sel[5]           5           5      100.00 
+         37                             reg_sel[4]           5           5      100.00 
+         37                             reg_sel[3]           5           5      100.00 
+         37                             reg_sel[2]           9           9      100.00 
+         37                             reg_sel[1]          11          11      100.00 
+         37                             reg_sel[0]          12          12      100.00 
+         38                              tdr0_r[9]           8          10      100.00 
+         38                              tdr0_r[8]           6          10      100.00 
+         38                              tdr0_r[7]           5           6      100.00 
+         38                              tdr0_r[6]           6           7      100.00 
+         38                              tdr0_r[5]           7           9      100.00 
+         38                              tdr0_r[4]           7          11      100.00 
+         38                              tdr0_r[3]           7           8      100.00 
+         38                             tdr0_r[31]           4           5      100.00 
+         38                             tdr0_r[30]           5           6      100.00 
+         38                              tdr0_r[2]           7           8      100.00 
+         38                             tdr0_r[29]           7           9      100.00 
+         38                             tdr0_r[28]           4           8      100.00 
+         38                             tdr0_r[27]           4           5      100.00 
+         38                             tdr0_r[26]           5           6      100.00 
+         38                             tdr0_r[25]           7           9      100.00 
+         38                             tdr0_r[24]           4           8      100.00 
+         38                             tdr0_r[23]           4           5      100.00 
+         38                             tdr0_r[22]           5           6      100.00 
+         38                             tdr0_r[21]           7           9      100.00 
+         38                             tdr0_r[20]           5           9      100.00 
+         38                              tdr0_r[1]           9          11      100.00 
+         38                             tdr0_r[19]           4           5      100.00 
+         38                             tdr0_r[18]           5           6      100.00 
+         38                             tdr0_r[17]           7           9      100.00 
+         38                             tdr0_r[16]           5           9      100.00 
+         38                             tdr0_r[15]           4           5      100.00 
+         38                             tdr0_r[14]           5           6      100.00 
+         38                             tdr0_r[13]           7           9      100.00 
+         38                             tdr0_r[12]           5           9      100.00 
+         38                             tdr0_r[11]           4           5      100.00 
+         38                             tdr0_r[10]           5           6      100.00 
+         38                              tdr0_r[0]           7          11      100.00 
+         39                              tdr1_r[9]           5           5      100.00 
+         39                              tdr1_r[8]           4           4      100.00 
+         39                              tdr1_r[7]           3           3      100.00 
+         39                              tdr1_r[6]           4           6      100.00 
+         39                              tdr1_r[5]           4           4      100.00 
+         39                              tdr1_r[4]           4           4      100.00 
+         39                              tdr1_r[3]           3           3      100.00 
+         39                             tdr1_r[31]           3           3      100.00 
+         39                             tdr1_r[30]           4           6      100.00 
+         39                              tdr1_r[2]           4           6      100.00 
+         39                             tdr1_r[29]           5           5      100.00 
+         39                             tdr1_r[28]           3           3      100.00 
+         39                             tdr1_r[27]           3           3      100.00 
+         39                             tdr1_r[26]           4           6      100.00 
+         39                             tdr1_r[25]           5           5      100.00 
+         39                             tdr1_r[24]           3           3      100.00 
+         39                             tdr1_r[23]           3           3      100.00 
+         39                             tdr1_r[22]           4           6      100.00 
+         39                             tdr1_r[21]           5           5      100.00 
+         39                             tdr1_r[20]           4           4      100.00 
+         39                              tdr1_r[1]           4           4      100.00 
+         39                             tdr1_r[19]           3           3      100.00 
+         39                             tdr1_r[18]           4           6      100.00 
+         39                             tdr1_r[17]           5           5      100.00 
+         39                             tdr1_r[16]           4           4      100.00 
+         39                             tdr1_r[15]           3           3      100.00 
+         39                             tdr1_r[14]           4           6      100.00 
+         39                             tdr1_r[13]           5           5      100.00 
+         39                             tdr1_r[12]           4           4      100.00 
+         39                             tdr1_r[11]           3           3      100.00 
+         39                             tdr1_r[10]           4           6      100.00 
+         39                              tdr1_r[0]           5           5      100.00 
+         40                             tcmp0_r[9]           4           2      100.00 
+         40                             tcmp0_r[8]           3           3      100.00 
+         40                             tcmp0_r[7]           3           1      100.00 
+         40                             tcmp0_r[6]           2           2      100.00 
+         40                             tcmp0_r[5]           3           1      100.00 
+         40                             tcmp0_r[4]           2           1      100.00 
+         40                             tcmp0_r[3]           3           2      100.00 
+         40                            tcmp0_r[31]           4           2      100.00 
+         40                            tcmp0_r[30]           3           2      100.00 
+         40                             tcmp0_r[2]           2           2      100.00 
+         40                            tcmp0_r[29]           4           3      100.00 
+         40                            tcmp0_r[28]           3           2      100.00 
+         40                            tcmp0_r[27]           4           2      100.00 
+         40                            tcmp0_r[26]           3           2      100.00 
+         40                            tcmp0_r[25]           4           3      100.00 
+         40                            tcmp0_r[24]           3           2      100.00 
+         40                            tcmp0_r[23]           4           2      100.00 
+         40                            tcmp0_r[22]           3           3      100.00 
+         40                            tcmp0_r[21]           4           2      100.00 
+         40                            tcmp0_r[20]           3           2      100.00 
+         40                             tcmp0_r[1]           3           2      100.00 
+         40                            tcmp0_r[19]           4           2      100.00 
+         40                            tcmp0_r[18]           3           3      100.00 
+         40                            tcmp0_r[17]           4           2      100.00 
+         40                            tcmp0_r[16]           3           2      100.00 
+         40                            tcmp0_r[15]           4           2      100.00 
+         40                            tcmp0_r[14]           3           3      100.00 
+         40                            tcmp0_r[13]           4           2      100.00 
+         40                            tcmp0_r[12]           3           3      100.00 
+         40                            tcmp0_r[11]           4           2      100.00 
+         40                            tcmp0_r[10]           3           3      100.00 
+         40                             tcmp0_r[0]           2           1      100.00 
+         41                             tcmp1_r[9]           3           2      100.00 
+         41                             tcmp1_r[8]           4           3      100.00 
+         41                             tcmp1_r[7]           4           2      100.00 
+         41                             tcmp1_r[6]           3           3      100.00 
+         41                             tcmp1_r[5]           3           2      100.00 
+         41                             tcmp1_r[4]           4           2      100.00 
+         41                             tcmp1_r[3]           4           2      100.00 
+         41                            tcmp1_r[31]           4           2      100.00 
+         41                            tcmp1_r[30]           3           2      100.00 
+         41                             tcmp1_r[2]           3           3      100.00 
+         41                            tcmp1_r[29]           3           3      100.00 
+         41                            tcmp1_r[28]           4           2      100.00 
+         41                            tcmp1_r[27]           4           2      100.00 
+         41                            tcmp1_r[26]           3           2      100.00 
+         41                            tcmp1_r[25]           3           3      100.00 
+         41                            tcmp1_r[24]           4           2      100.00 
+         41                            tcmp1_r[23]           4           2      100.00 
+         41                            tcmp1_r[22]           3           3      100.00 
+         41                            tcmp1_r[21]           3           2      100.00 
+         41                            tcmp1_r[20]           4           2      100.00 
+         41                             tcmp1_r[1]           3           2      100.00 
+         41                            tcmp1_r[19]           4           2      100.00 
+         41                            tcmp1_r[18]           3           3      100.00 
+         41                            tcmp1_r[17]           3           2      100.00 
+         41                            tcmp1_r[16]           4           2      100.00 
+         41                            tcmp1_r[15]           4           2      100.00 
+         41                            tcmp1_r[14]           3           3      100.00 
+         41                            tcmp1_r[13]           3           2      100.00 
+         41                            tcmp1_r[12]           4           3      100.00 
+         41                            tcmp1_r[11]           4           2      100.00 
+         41                            tcmp1_r[10]           3           3      100.00 
+         41                             tcmp1_r[0]           4           2      100.00 
+         42                              tier_r[9]           0           0        0.00 
+         42                              tier_r[8]           0           0        0.00 
+         42                              tier_r[7]           0           0        0.00 
+         42                              tier_r[6]           0           0        0.00 
+         42                              tier_r[5]           0           0        0.00 
+         42                              tier_r[4]           0           0        0.00 
+         42                              tier_r[3]           0           0        0.00 
+         42                             tier_r[31]           0           0        0.00 
+         42                             tier_r[30]           0           0        0.00 
+         42                              tier_r[2]           0           0        0.00 
+         42                             tier_r[29]           0           0        0.00 
+         42                             tier_r[28]           0           0        0.00 
+         42                             tier_r[27]           0           0        0.00 
+         42                             tier_r[26]           0           0        0.00 
+         42                             tier_r[25]           0           0        0.00 
+         42                             tier_r[24]           0           0        0.00 
+         42                             tier_r[23]           0           0        0.00 
+         42                             tier_r[22]           0           0        0.00 
+         42                             tier_r[21]           0           0        0.00 
+         42                             tier_r[20]           0           0        0.00 
+         42                              tier_r[1]           0           0        0.00 
+         42                             tier_r[19]           0           0        0.00 
+         42                             tier_r[18]           0           0        0.00 
+         42                             tier_r[17]           0           0        0.00 
+         42                             tier_r[16]           0           0        0.00 
+         42                             tier_r[15]           0           0        0.00 
+         42                             tier_r[14]           0           0        0.00 
+         42                             tier_r[13]           0           0        0.00 
+         42                             tier_r[12]           0           0        0.00 
+         42                             tier_r[11]           0           0        0.00 
+         42                             tier_r[10]           0           0        0.00 
+         42                              tier_r[0]           3           4      100.00 
+         43                              tisr_r[9]           0           0        0.00 
+         43                              tisr_r[8]           0           0        0.00 
+         43                              tisr_r[7]           0           0        0.00 
+         43                              tisr_r[6]           0           0        0.00 
+         43                              tisr_r[5]           0           0        0.00 
+         43                              tisr_r[4]           0           0        0.00 
+         43                              tisr_r[3]           0           0        0.00 
+         43                             tisr_r[31]           0           0        0.00 
+         43                             tisr_r[30]           0           0        0.00 
+         43                              tisr_r[2]           0           0        0.00 
+         43                             tisr_r[29]           0           0        0.00 
+         43                             tisr_r[28]           0           0        0.00 
+         43                             tisr_r[27]           0           0        0.00 
+         43                             tisr_r[26]           0           0        0.00 
+         43                             tisr_r[25]           0           0        0.00 
+         43                             tisr_r[24]           0           0        0.00 
+         43                             tisr_r[23]           0           0        0.00 
+         43                             tisr_r[22]           0           0        0.00 
+         43                             tisr_r[21]           0           0        0.00 
+         43                             tisr_r[20]           0           0        0.00 
+         43                              tisr_r[1]           0           0        0.00 
+         43                             tisr_r[19]           0           0        0.00 
+         43                             tisr_r[18]           0           0        0.00 
+         43                             tisr_r[17]           0           0        0.00 
+         43                             tisr_r[16]           0           0        0.00 
+         43                             tisr_r[15]           0           0        0.00 
+         43                             tisr_r[14]           0           0        0.00 
+         43                             tisr_r[13]           0           0        0.00 
+         43                             tisr_r[12]           0           0        0.00 
+         43                             tisr_r[11]           0           0        0.00 
+         43                             tisr_r[10]           0           0        0.00 
+         43                              tisr_r[0]           3           4      100.00 
+         44                               tcr_r[9]           2           3      100.00 
+         44                               tcr_r[8]           8           5      100.00 
+         44                               tcr_r[7]           0           0        0.00 
+         44                               tcr_r[6]           0           0        0.00 
+         44                               tcr_r[5]           0           0        0.00 
+         44                               tcr_r[4]           0           0        0.00 
+         44                               tcr_r[3]           0           0        0.00 
+         44                              tcr_r[31]           0           0        0.00 
+         44                              tcr_r[30]           0           0        0.00 
+         44                               tcr_r[2]           0           0        0.00 
+         44                              tcr_r[29]           0           0        0.00 
+         44                              tcr_r[28]           0           0        0.00 
+         44                              tcr_r[27]           0           0        0.00 
+         44                              tcr_r[26]           0           0        0.00 
+         44                              tcr_r[25]           0           0        0.00 
+         44                              tcr_r[24]           0           0        0.00 
+         44                              tcr_r[23]           0           0        0.00 
+         44                              tcr_r[22]           0           0        0.00 
+         44                              tcr_r[21]           0           0        0.00 
+         44                              tcr_r[20]           0           0        0.00 
+         44                               tcr_r[1]           2           5      100.00 
+         44                              tcr_r[19]           0           0        0.00 
+         44                              tcr_r[18]           0           0        0.00 
+         44                              tcr_r[17]           0           0        0.00 
+         44                              tcr_r[16]           0           0        0.00 
+         44                              tcr_r[15]           0           0        0.00 
+         44                              tcr_r[14]           0           0        0.00 
+         44                              tcr_r[13]           0           0        0.00 
+         44                              tcr_r[12]           0           0        0.00 
+         44                              tcr_r[11]           2           3      100.00 
+         44                              tcr_r[10]           4           4      100.00 
+         44                               tcr_r[0]           7           7      100.00 
+         45                             timer_en_d           7           7      100.00 
+         47                             low_cnt[9]           8          10      100.00 
+         47                             low_cnt[8]           6          10      100.00 
+         47                             low_cnt[7]           5           6      100.00 
+         47                             low_cnt[6]           6           7      100.00 
+         47                             low_cnt[5]           7           9      100.00 
+         47                             low_cnt[4]           7          11      100.00 
+         47                             low_cnt[3]           7           8      100.00 
+         47                            low_cnt[31]           4           5      100.00 
+         47                            low_cnt[30]           5           6      100.00 
+         47                             low_cnt[2]           7           8      100.00 
+         47                            low_cnt[29]           7           9      100.00 
+         47                            low_cnt[28]           4           8      100.00 
+         47                            low_cnt[27]           4           5      100.00 
+         47                            low_cnt[26]           5           6      100.00 
+         47                            low_cnt[25]           7           9      100.00 
+         47                            low_cnt[24]           4           8      100.00 
+         47                            low_cnt[23]           4           5      100.00 
+         47                            low_cnt[22]           5           6      100.00 
+         47                            low_cnt[21]           7           9      100.00 
+         47                            low_cnt[20]           5           9      100.00 
+         47                             low_cnt[1]           9          11      100.00 
+         47                            low_cnt[19]           4           5      100.00 
+         47                            low_cnt[18]           5           6      100.00 
+         47                            low_cnt[17]           7           9      100.00 
+         47                            low_cnt[16]           5           9      100.00 
+         47                            low_cnt[15]           4           5      100.00 
+         47                            low_cnt[14]           5           6      100.00 
+         47                            low_cnt[13]           7           9      100.00 
+         47                            low_cnt[12]           5           9      100.00 
+         47                            low_cnt[11]           4           5      100.00 
+         47                            low_cnt[10]           5           6      100.00 
+         47                             low_cnt[0]           7          11      100.00 
+         48                           tcmp0_tmp[9]           4           2      100.00 
+         48                           tcmp0_tmp[8]           3           3      100.00 
+         48                           tcmp0_tmp[7]           3           1      100.00 
+         48                           tcmp0_tmp[6]           2           2      100.00 
+         48                           tcmp0_tmp[5]           3           1      100.00 
+         48                           tcmp0_tmp[4]           2           1      100.00 
+         48                           tcmp0_tmp[3]           3           2      100.00 
+         48                          tcmp0_tmp[31]           4           2      100.00 
+         48                          tcmp0_tmp[30]           3           2      100.00 
+         48                           tcmp0_tmp[2]           2           2      100.00 
+         48                          tcmp0_tmp[29]           4           3      100.00 
+         48                          tcmp0_tmp[28]           3           2      100.00 
+         48                          tcmp0_tmp[27]           4           2      100.00 
+         48                          tcmp0_tmp[26]           3           2      100.00 
+         48                          tcmp0_tmp[25]           4           3      100.00 
+         48                          tcmp0_tmp[24]           3           2      100.00 
+         48                          tcmp0_tmp[23]           4           2      100.00 
+         48                          tcmp0_tmp[22]           3           3      100.00 
+         48                          tcmp0_tmp[21]           4           2      100.00 
+         48                          tcmp0_tmp[20]           3           2      100.00 
+         48                           tcmp0_tmp[1]           3           2      100.00 
+         48                          tcmp0_tmp[19]           4           2      100.00 
+         48                          tcmp0_tmp[18]           3           3      100.00 
+         48                          tcmp0_tmp[17]           4           2      100.00 
+         48                          tcmp0_tmp[16]           3           2      100.00 
+         48                          tcmp0_tmp[15]           4           2      100.00 
+         48                          tcmp0_tmp[14]           3           3      100.00 
+         48                          tcmp0_tmp[13]           4           2      100.00 
+         48                          tcmp0_tmp[12]           3           3      100.00 
+         48                          tcmp0_tmp[11]           4           2      100.00 
+         48                          tcmp0_tmp[10]           3           3      100.00 
+         48                           tcmp0_tmp[0]           2           1      100.00 
+         49                           tcmp1_tmp[9]           3           2      100.00 
+         49                           tcmp1_tmp[8]           4           3      100.00 
+         49                           tcmp1_tmp[7]           4           2      100.00 
+         49                           tcmp1_tmp[6]           3           3      100.00 
+         49                           tcmp1_tmp[5]           3           2      100.00 
+         49                           tcmp1_tmp[4]           4           2      100.00 
+         49                           tcmp1_tmp[3]           4           2      100.00 
+         49                          tcmp1_tmp[31]           4           2      100.00 
+         49                          tcmp1_tmp[30]           3           2      100.00 
+         49                           tcmp1_tmp[2]           3           3      100.00 
+         49                          tcmp1_tmp[29]           3           3      100.00 
+         49                          tcmp1_tmp[28]           4           2      100.00 
+         49                          tcmp1_tmp[27]           4           2      100.00 
+         49                          tcmp1_tmp[26]           3           2      100.00 
+         49                          tcmp1_tmp[25]           3           3      100.00 
+         49                          tcmp1_tmp[24]           4           2      100.00 
+         49                          tcmp1_tmp[23]           4           2      100.00 
+         49                          tcmp1_tmp[22]           3           3      100.00 
+         49                          tcmp1_tmp[21]           3           2      100.00 
+         49                          tcmp1_tmp[20]           4           2      100.00 
+         49                           tcmp1_tmp[1]           3           2      100.00 
+         49                          tcmp1_tmp[19]           4           2      100.00 
+         49                          tcmp1_tmp[18]           3           3      100.00 
+         49                          tcmp1_tmp[17]           3           2      100.00 
+         49                          tcmp1_tmp[16]           4           2      100.00 
+         49                          tcmp1_tmp[15]           4           2      100.00 
+         49                          tcmp1_tmp[14]           3           3      100.00 
+         49                          tcmp1_tmp[13]           3           2      100.00 
+         49                          tcmp1_tmp[12]           4           3      100.00 
+         49                          tcmp1_tmp[11]           4           2      100.00 
+         49                          tcmp1_tmp[10]           3           3      100.00 
+         49                           tcmp1_tmp[0]           4           2      100.00 
+         50                            tier_tmp[9]           0           0        0.00 
+         50                            tier_tmp[8]           0           0        0.00 
+         50                            tier_tmp[7]           0           0        0.00 
+         50                            tier_tmp[6]           0           0        0.00 
+         50                            tier_tmp[5]           0           0        0.00 
+         50                            tier_tmp[4]           0           0        0.00 
+         50                            tier_tmp[3]           0           0        0.00 
+         50                           tier_tmp[31]           0           0        0.00 
+         50                           tier_tmp[30]           0           0        0.00 
+         50                            tier_tmp[2]           0           0        0.00 
+         50                           tier_tmp[29]           0           0        0.00 
+         50                           tier_tmp[28]           0           0        0.00 
+         50                           tier_tmp[27]           0           0        0.00 
+         50                           tier_tmp[26]           0           0        0.00 
+         50                           tier_tmp[25]           0           0        0.00 
+         50                           tier_tmp[24]           0           0        0.00 
+         50                           tier_tmp[23]           0           0        0.00 
+         50                           tier_tmp[22]           0           0        0.00 
+         50                           tier_tmp[21]           0           0        0.00 
+         50                           tier_tmp[20]           0           0        0.00 
+         50                            tier_tmp[1]           0           0        0.00 
+         50                           tier_tmp[19]           0           0        0.00 
+         50                           tier_tmp[18]           0           0        0.00 
+         50                           tier_tmp[17]           0           0        0.00 
+         50                           tier_tmp[16]           0           0        0.00 
+         50                           tier_tmp[15]           0           0        0.00 
+         50                           tier_tmp[14]           0           0        0.00 
+         50                           tier_tmp[13]           0           0        0.00 
+         50                           tier_tmp[12]           0           0        0.00 
+         50                           tier_tmp[11]           0           0        0.00 
+         50                           tier_tmp[10]           0           0        0.00 
+         50                            tier_tmp[0]           3           4      100.00 
+         51                            tisr_tmp[9]           0           0        0.00 
+         51                            tisr_tmp[8]           0           0        0.00 
+         51                            tisr_tmp[7]           0           0        0.00 
+         51                            tisr_tmp[6]           0           0        0.00 
+         51                            tisr_tmp[5]           0           0        0.00 
+         51                            tisr_tmp[4]           0           0        0.00 
+         51                            tisr_tmp[3]           0           0        0.00 
+         51                           tisr_tmp[31]           0           0        0.00 
+         51                           tisr_tmp[30]           0           0        0.00 
+         51                            tisr_tmp[2]           0           0        0.00 
+         51                           tisr_tmp[29]           0           0        0.00 
+         51                           tisr_tmp[28]           0           0        0.00 
+         51                           tisr_tmp[27]           0           0        0.00 
+         51                           tisr_tmp[26]           0           0        0.00 
+         51                           tisr_tmp[25]           0           0        0.00 
+         51                           tisr_tmp[24]           0           0        0.00 
+         51                           tisr_tmp[23]           0           0        0.00 
+         51                           tisr_tmp[22]           0           0        0.00 
+         51                           tisr_tmp[21]           0           0        0.00 
+         51                           tisr_tmp[20]           0           0        0.00 
+         51                            tisr_tmp[1]           0           0        0.00 
+         51                           tisr_tmp[19]           0           0        0.00 
+         51                           tisr_tmp[18]           0           0        0.00 
+         51                           tisr_tmp[17]           0           0        0.00 
+         51                           tisr_tmp[16]           0           0        0.00 
+         51                           tisr_tmp[15]           0           0        0.00 
+         51                           tisr_tmp[14]           0           0        0.00 
+         51                           tisr_tmp[13]           0           0        0.00 
+         51                           tisr_tmp[12]           0           0        0.00 
+         51                           tisr_tmp[11]           0           0        0.00 
+         51                           tisr_tmp[10]           0           0        0.00 
+         51                            tisr_tmp[0]           3           4      100.00 
+         52                             div_en_tmp           2           5      100.00 
+         53                           timer_en_tmp           7           7      100.00 
+         54                         div_val_tmp[3]           2           3      100.00 
+         54                         div_val_tmp[2]           4           4      100.00 
+         54                         div_val_tmp[1]           2           3      100.00 
+         54                         div_val_tmp[0]           8           5      100.00 
+         55                            high_cnt[9]           5           5      100.00 
+         55                            high_cnt[8]           4           4      100.00 
+         55                            high_cnt[7]           3           3      100.00 
+         55                            high_cnt[6]           4           6      100.00 
+         55                            high_cnt[5]           4           4      100.00 
+         55                            high_cnt[4]           4           4      100.00 
+         55                            high_cnt[3]           3           3      100.00 
+         55                           high_cnt[31]           3           3      100.00 
+         55                           high_cnt[30]           4           6      100.00 
+         55                            high_cnt[2]           4           6      100.00 
+         55                           high_cnt[29]           5           5      100.00 
+         55                           high_cnt[28]           3           3      100.00 
+         55                           high_cnt[27]           3           3      100.00 
+         55                           high_cnt[26]           4           6      100.00 
+         55                           high_cnt[25]           5           5      100.00 
+         55                           high_cnt[24]           3           3      100.00 
+         55                           high_cnt[23]           3           3      100.00 
+         55                           high_cnt[22]           4           6      100.00 
+         55                           high_cnt[21]           5           5      100.00 
+         55                           high_cnt[20]           4           4      100.00 
+         55                            high_cnt[1]           4           4      100.00 
+         55                           high_cnt[19]           3           3      100.00 
+         55                           high_cnt[18]           4           6      100.00 
+         55                           high_cnt[17]           5           5      100.00 
+         55                           high_cnt[16]           4           4      100.00 
+         55                           high_cnt[15]           3           3      100.00 
+         55                           high_cnt[14]           4           6      100.00 
+         55                           high_cnt[13]           5           5      100.00 
+         55                           high_cnt[12]           4           4      100.00 
+         55                           high_cnt[11]           3           3      100.00 
+         55                           high_cnt[10]           4           6      100.00 
+         55                            high_cnt[0]           5           5      100.00 
+         56                             err_div_en           2           2      100.00 
+         57                           err_div_val0           2           2      100.00 
+         58                           err_div_val1           2           2      100.00 
+         59                             tcr_tmp[9]           2           3      100.00 
+         59                             tcr_tmp[8]           8           5      100.00 
+         59                             tcr_tmp[7]           0           0        0.00 
+         59                             tcr_tmp[6]           0           0        0.00 
+         59                             tcr_tmp[5]           0           0        0.00 
+         59                             tcr_tmp[4]           0           0        0.00 
+         59                             tcr_tmp[3]           0           0        0.00 
+         59                            tcr_tmp[31]           0           0        0.00 
+         59                            tcr_tmp[30]           0           0        0.00 
+         59                             tcr_tmp[2]           0           0        0.00 
+         59                            tcr_tmp[29]           0           0        0.00 
+         59                            tcr_tmp[28]           0           0        0.00 
+         59                            tcr_tmp[27]           0           0        0.00 
+         59                            tcr_tmp[26]           0           0        0.00 
+         59                            tcr_tmp[25]           0           0        0.00 
+         59                            tcr_tmp[24]           0           0        0.00 
+         59                            tcr_tmp[23]           0           0        0.00 
+         59                            tcr_tmp[22]           0           0        0.00 
+         59                            tcr_tmp[21]           0           0        0.00 
+         59                            tcr_tmp[20]           0           0        0.00 
+         59                             tcr_tmp[1]           2           5      100.00 
+         59                            tcr_tmp[19]           0           0        0.00 
+         59                            tcr_tmp[18]           0           0        0.00 
+         59                            tcr_tmp[17]           0           0        0.00 
+         59                            tcr_tmp[16]           0           0        0.00 
+         59                            tcr_tmp[15]           0           0        0.00 
+         59                            tcr_tmp[14]           0           0        0.00 
+         59                            tcr_tmp[13]           0           0        0.00 
+         59                            tcr_tmp[12]           0           0        0.00 
+         59                            tcr_tmp[11]           2           3      100.00 
+         59                            tcr_tmp[10]           4           4      100.00 
+         59                             tcr_tmp[0]           7           7      100.00 
+         60                            tcr_tmp1[9]           2           3      100.00 
+         60                            tcr_tmp1[8]           8           5      100.00 
+         60                            tcr_tmp1[7]           0           0        0.00 
+         60                            tcr_tmp1[6]           0           0        0.00 
+         60                            tcr_tmp1[5]           0           0        0.00 
+         60                            tcr_tmp1[4]           0           0        0.00 
+         60                            tcr_tmp1[3]           0           0        0.00 
+         60                           tcr_tmp1[31]           0           0        0.00 
+         60                           tcr_tmp1[30]           0           0        0.00 
+         60                            tcr_tmp1[2]           0           0        0.00 
+         60                           tcr_tmp1[29]           0           0        0.00 
+         60                           tcr_tmp1[28]           0           0        0.00 
+         60                           tcr_tmp1[27]           0           0        0.00 
+         60                           tcr_tmp1[26]           0           0        0.00 
+         60                           tcr_tmp1[25]           0           0        0.00 
+         60                           tcr_tmp1[24]           0           0        0.00 
+         60                           tcr_tmp1[23]           0           0        0.00 
+         60                           tcr_tmp1[22]           0           0        0.00 
+         60                           tcr_tmp1[21]           0           0        0.00 
+         60                           tcr_tmp1[20]           0           0        0.00 
+         60                            tcr_tmp1[1]           2           5      100.00 
+         60                           tcr_tmp1[19]           0           0        0.00 
+         60                           tcr_tmp1[18]           0           0        0.00 
+         60                           tcr_tmp1[17]           0           0        0.00 
+         60                           tcr_tmp1[16]           0           0        0.00 
+         60                           tcr_tmp1[15]           0           0        0.00 
+         60                           tcr_tmp1[14]           0           0        0.00 
+         60                           tcr_tmp1[13]           0           0        0.00 
+         60                           tcr_tmp1[12]           0           0        0.00 
+         60                           tcr_tmp1[11]           2           3      100.00 
+         60                           tcr_tmp1[10]           4           4      100.00 
+         60                            tcr_tmp1[0]           7           7      100.00 
+         76                                mask[9]           1           1      100.00 
+         76                                mask[8]           1           1      100.00 
+         76                                mask[7]           1           1      100.00 
+         76                                mask[6]           1           1      100.00 
+         76                                mask[5]           1           1      100.00 
+         76                                mask[4]           1           1      100.00 
+         76                                mask[3]           1           1      100.00 
+         76                               mask[31]           1           1      100.00 
+         76                               mask[30]           1           1      100.00 
+         76                                mask[2]           1           1      100.00 
+         76                               mask[29]           1           1      100.00 
+         76                               mask[28]           1           1      100.00 
+         76                               mask[27]           1           1      100.00 
+         76                               mask[26]           1           1      100.00 
+         76                               mask[25]           1           1      100.00 
+         76                               mask[24]           1           1      100.00 
+         76                               mask[23]           1           1      100.00 
+         76                               mask[22]           1           1      100.00 
+         76                               mask[21]           1           1      100.00 
+         76                               mask[20]           1           1      100.00 
+         76                                mask[1]           1           1      100.00 
+         76                               mask[19]           1           1      100.00 
+         76                               mask[18]           1           1      100.00 
+         76                               mask[17]           1           1      100.00 
+         76                               mask[16]           1           1      100.00 
+         76                               mask[15]           1           1      100.00 
+         76                               mask[14]           1           1      100.00 
+         76                               mask[13]           1           1      100.00 
+         76                               mask[12]           1           1      100.00 
+         76                               mask[11]           1           1      100.00 
+         76                               mask[10]           1           1      100.00 
+         76                                mask[0]           1           1      100.00 
+        157                           halt_ack_tmp           2           2      100.00 
+        158                             halt_req_r           4           4      100.00 
+        159                           halt_req_tmp           4           4      100.00 
+        160                             halt_ack_r           2           2      100.00 
+        179                             rdata_r[9]          10          10      100.00 
+        179                             rdata_r[8]          12          12      100.00 
+        179                             rdata_r[7]           5           5      100.00 
+        179                             rdata_r[6]           7           7      100.00 
+        179                             rdata_r[5]           8           8      100.00 
+        179                             rdata_r[4]          10          10      100.00 
+        179                             rdata_r[3]           6           6      100.00 
+        179                            rdata_r[31]           6           6      100.00 
+        179                            rdata_r[30]           7           7      100.00 
+        179                             rdata_r[2]           8           8      100.00 
+        179                            rdata_r[29]           9           9      100.00 
+        179                            rdata_r[28]           9           9      100.00 
+        179                            rdata_r[27]           6           6      100.00 
+        179                            rdata_r[26]           7           7      100.00 
+        179                            rdata_r[25]           9           9      100.00 
+        179                            rdata_r[24]           9           9      100.00 
+        179                            rdata_r[23]           6           6      100.00 
+        179                            rdata_r[22]           7           7      100.00 
+        179                            rdata_r[21]           9           9      100.00 
+        179                            rdata_r[20]           9           9      100.00 
+        179                             rdata_r[1]          11          11      100.00 
+        179                            rdata_r[19]           6           6      100.00 
+        179                            rdata_r[18]           7           7      100.00 
+        179                            rdata_r[17]           9           9      100.00 
+        179                            rdata_r[16]           9           9      100.00 
+        179                            rdata_r[15]           6           6      100.00 
+        179                            rdata_r[14]           7           7      100.00 
+        179                            rdata_r[13]           9           9      100.00 
+        179                            rdata_r[12]           9           9      100.00 
+        179                            rdata_r[11]           7           7      100.00 
+        179                            rdata_r[10]           7           7      100.00 
+        179                             rdata_r[0]          12          12      100.00 
+
+Total Node Count     =        566 
+Toggled Node Count   =        364 
+Untoggled Node Count =        202 
+
+Toggle Coverage      =       64.3% (728 of 1132 bins)
+
+File: ../rtl/top.v
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    366       360         6      98.3
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../rtl/top.v --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+         13                          tim_pslverr_r           0           0        0.00 
+         14                        tim_pslverr_tmp           0           0        0.00 
+         14                                pslverr           0           0        0.00 
+         15                             pready_tmp          13          13      100.00 
+         15                             err_en_tmp           2           2      100.00 
+         16                              wr_en_tmp          12          12      100.00 
+         16                              rd_en_tmp          13          13      100.00 
+         17                           rdata_tmp[9]          10          10      100.00 
+         17                           rdata_tmp[8]          12          12      100.00 
+         17                           rdata_tmp[7]           5           5      100.00 
+         17                           rdata_tmp[6]           7           7      100.00 
+         17                           rdata_tmp[5]           8           8      100.00 
+         17                           rdata_tmp[4]          10          10      100.00 
+         17                           rdata_tmp[3]           6           6      100.00 
+         17                          rdata_tmp[31]           6           6      100.00 
+         17                          rdata_tmp[30]           7           7      100.00 
+         17                           rdata_tmp[2]           8           8      100.00 
+         17                          rdata_tmp[29]           9           9      100.00 
+         17                          rdata_tmp[28]           9           9      100.00 
+         17                          rdata_tmp[27]           6           6      100.00 
+         17                          rdata_tmp[26]           7           7      100.00 
+         17                          rdata_tmp[25]           9           9      100.00 
+         17                          rdata_tmp[24]           9           9      100.00 
+         17                          rdata_tmp[23]           6           6      100.00 
+         17                          rdata_tmp[22]           7           7      100.00 
+         17                          rdata_tmp[21]           9           9      100.00 
+         17                          rdata_tmp[20]           9           9      100.00 
+         17                           rdata_tmp[1]          11          11      100.00 
+         17                          rdata_tmp[19]           6           6      100.00 
+         17                          rdata_tmp[18]           7           7      100.00 
+         17                          rdata_tmp[17]           9           9      100.00 
+         17                          rdata_tmp[16]           9           9      100.00 
+         17                          rdata_tmp[15]           6           6      100.00 
+         17                          rdata_tmp[14]           7           7      100.00 
+         17                          rdata_tmp[13]           9           9      100.00 
+         17                          rdata_tmp[12]           9           9      100.00 
+         17                          rdata_tmp[11]           7           7      100.00 
+         17                          rdata_tmp[10]           7           7      100.00 
+         17                           rdata_tmp[0]          12          12      100.00 
+         18                             cnt_tmp[9]           8          10      100.00 
+         18                             cnt_tmp[8]           6          10      100.00 
+         18                             cnt_tmp[7]           5           6      100.00 
+         18                             cnt_tmp[6]           6           7      100.00 
+         18                            cnt_tmp[63]           3           3      100.00 
+         18                            cnt_tmp[62]           4           6      100.00 
+         18                            cnt_tmp[61]           5           5      100.00 
+         18                            cnt_tmp[60]           3           3      100.00 
+         18                             cnt_tmp[5]           7           9      100.00 
+         18                            cnt_tmp[59]           3           3      100.00 
+         18                            cnt_tmp[58]           4           6      100.00 
+         18                            cnt_tmp[57]           5           5      100.00 
+         18                            cnt_tmp[56]           3           3      100.00 
+         18                            cnt_tmp[55]           3           3      100.00 
+         18                            cnt_tmp[54]           4           6      100.00 
+         18                            cnt_tmp[53]           5           5      100.00 
+         18                            cnt_tmp[52]           4           4      100.00 
+         18                            cnt_tmp[51]           3           3      100.00 
+         18                            cnt_tmp[50]           4           6      100.00 
+         18                             cnt_tmp[4]           7          11      100.00 
+         18                            cnt_tmp[49]           5           5      100.00 
+         18                            cnt_tmp[48]           4           4      100.00 
+         18                            cnt_tmp[47]           3           3      100.00 
+         18                            cnt_tmp[46]           4           6      100.00 
+         18                            cnt_tmp[45]           5           5      100.00 
+         18                            cnt_tmp[44]           4           4      100.00 
+         18                            cnt_tmp[43]           3           3      100.00 
+         18                            cnt_tmp[42]           4           6      100.00 
+         18                            cnt_tmp[41]           5           5      100.00 
+         18                            cnt_tmp[40]           4           4      100.00 
+         18                             cnt_tmp[3]           7           8      100.00 
+         18                            cnt_tmp[39]           3           3      100.00 
+         18                            cnt_tmp[38]           4           6      100.00 
+         18                            cnt_tmp[37]           4           4      100.00 
+         18                            cnt_tmp[36]           4           4      100.00 
+         18                            cnt_tmp[35]           3           3      100.00 
+         18                            cnt_tmp[34]           4           6      100.00 
+         18                            cnt_tmp[33]           4           4      100.00 
+         18                            cnt_tmp[32]           5           5      100.00 
+         18                            cnt_tmp[31]           4           5      100.00 
+         18                            cnt_tmp[30]           5           6      100.00 
+         18                             cnt_tmp[2]           7           8      100.00 
+         18                            cnt_tmp[29]           7           9      100.00 
+         18                            cnt_tmp[28]           4           8      100.00 
+         18                            cnt_tmp[27]           4           5      100.00 
+         18                            cnt_tmp[26]           5           6      100.00 
+         18                            cnt_tmp[25]           7           9      100.00 
+         18                            cnt_tmp[24]           4           8      100.00 
+         18                            cnt_tmp[23]           4           5      100.00 
+         18                            cnt_tmp[22]           5           6      100.00 
+         18                            cnt_tmp[21]           7           9      100.00 
+         18                            cnt_tmp[20]           5           9      100.00 
+         18                             cnt_tmp[1]           9          11      100.00 
+         18                            cnt_tmp[19]           4           5      100.00 
+         18                            cnt_tmp[18]           5           6      100.00 
+         18                            cnt_tmp[17]           7           9      100.00 
+         18                            cnt_tmp[16]           5           9      100.00 
+         18                            cnt_tmp[15]           4           5      100.00 
+         18                            cnt_tmp[14]           5           6      100.00 
+         18                            cnt_tmp[13]           7           9      100.00 
+         18                            cnt_tmp[12]           5           9      100.00 
+         18                            cnt_tmp[11]           4           5      100.00 
+         18                            cnt_tmp[10]           5           6      100.00 
+         18                             cnt_tmp[0]           7          11      100.00 
+         19                               wdata[9]          11          11      100.00 
+         19                               wdata[8]          11          11      100.00 
+         19                               wdata[7]           9           9      100.00 
+         19                               wdata[6]          11          11      100.00 
+         19                               wdata[5]          11          11      100.00 
+         19                               wdata[4]          11          11      100.00 
+         19                               wdata[3]           9           9      100.00 
+         19                              wdata[31]           8           8      100.00 
+         19                              wdata[30]          10          10      100.00 
+         19                               wdata[2]          11          11      100.00 
+         19                              wdata[29]          10          10      100.00 
+         19                              wdata[28]          10          10      100.00 
+         19                              wdata[27]           8           8      100.00 
+         19                              wdata[26]          10          10      100.00 
+         19                              wdata[25]          10          10      100.00 
+         19                              wdata[24]          10          10      100.00 
+         19                              wdata[23]           8           8      100.00 
+         19                              wdata[22]          10          10      100.00 
+         19                              wdata[21]          10          10      100.00 
+         19                              wdata[20]          10          10      100.00 
+         19                               wdata[1]          12          12      100.00 
+         19                              wdata[19]           8           8      100.00 
+         19                              wdata[18]          10          10      100.00 
+         19                              wdata[17]          10          10      100.00 
+         19                              wdata[16]          10          10      100.00 
+         19                              wdata[15]           8           8      100.00 
+         19                              wdata[14]          10          10      100.00 
+         19                              wdata[13]          10          10      100.00 
+         19                              wdata[12]          10          10      100.00 
+         19                              wdata[11]           9           9      100.00 
+         19                              wdata[10]          11          11      100.00 
+         19                               wdata[0]          12          12      100.00 
+         20                           halt_req_tmp           2           2      100.00 
+         21                           timer_en_tmp           7           7      100.00 
+         22                         reg_sel_tmp[7]           6           6      100.00 
+         22                         reg_sel_tmp[6]           5           5      100.00 
+         22                         reg_sel_tmp[5]           5           5      100.00 
+         22                         reg_sel_tmp[4]           5           5      100.00 
+         22                         reg_sel_tmp[3]           5           5      100.00 
+         22                         reg_sel_tmp[2]           9           9      100.00 
+         22                         reg_sel_tmp[1]          11          11      100.00 
+         22                         reg_sel_tmp[0]          12          12      100.00 
+         23                         div_val_tmp[3]           2           3      100.00 
+         23                         div_val_tmp[2]           4           4      100.00 
+         23                         div_val_tmp[1]           2           3      100.00 
+         23                         div_val_tmp[0]           8           5      100.00 
+         24                             div_en_tmp           2           5      100.00 
+         25                                 wdt[9]          11          11      100.00 
+         25                                 wdt[8]          11          11      100.00 
+         25                                 wdt[7]           9           9      100.00 
+         25                                 wdt[6]          11          11      100.00 
+         25                                 wdt[5]          11          11      100.00 
+         25                                 wdt[4]          11          11      100.00 
+         25                                 wdt[3]           9           9      100.00 
+         25                                wdt[31]           8           8      100.00 
+         25                                wdt[30]          10          10      100.00 
+         25                                 wdt[2]          11          11      100.00 
+         25                                wdt[29]          10          10      100.00 
+         25                                wdt[28]          10          10      100.00 
+         25                                wdt[27]           8           8      100.00 
+         25                                wdt[26]          10          10      100.00 
+         25                                wdt[25]          10          10      100.00 
+         25                                wdt[24]          10          10      100.00 
+         25                                wdt[23]           8           8      100.00 
+         25                                wdt[22]          10          10      100.00 
+         25                                wdt[21]          10          10      100.00 
+         25                                wdt[20]          10          10      100.00 
+         25                                 wdt[1]          12          12      100.00 
+         25                                wdt[19]           8           8      100.00 
+         25                                wdt[18]          10          10      100.00 
+         25                                wdt[17]          10          10      100.00 
+         25                                wdt[16]          10          10      100.00 
+         25                                wdt[15]           8           8      100.00 
+         25                                wdt[14]          10          10      100.00 
+         25                                wdt[13]          10          10      100.00 
+         25                                wdt[12]          10          10      100.00 
+         25                                wdt[11]           9           9      100.00 
+         25                                wdt[10]          11          11      100.00 
+         25                                 wdt[0]          12          12      100.00 
+         72                             cnt_en_tmp           7           7      100.00 
+
+Total Node Count     =        183 
+Toggled Node Count   =        180 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =       98.3% (360 of 366 bins)
+
+File: ../tb/test_bench.v
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                          189       149        40      78.8
+
+================================Statement Details================================
+
+Statement Coverage for file ../tb/test_bench.v --
+
+    159             1     			        $display("------------------------------------------------");
+    160             1     			        $display("t=%10d FAIL: pready asserts same time with penable", $time); 
+    161             1     			        $display("------------------------------------------------");
+    162             1                         err=err+1;
+    171             1     			        $display("------------------------------------------------");
+    172             1     			        $display("t=%10d FAIL: pslverr asserts unexpectedly", $time); 
+    173             1     			        $display("------------------------------------------------");
+    174             1                         err=err+1;
+    210             1     			        $display("------------------------------------------------");
+    211             1     			        $display("t=%10d FAIL: pready asserts same time with penable", $time); 
+    212             1     			        $display("------------------------------------------------");
+    213             1                         err=err+1;
+    221             1                         pslverr_high = 1;
+    223             1     			        $display("------------------------------------------------");
+    224             1     			        $display("t=%10d FAIL: pslverr asserts unexpectedly", $time); 
+    225             1     			        $display("------------------------------------------------");
+    226             1                         err=err+1;
+    267             1     			        $display("------------------------------------------------");
+    268             1     			        $display("t=%10d FAIL: pready asserts same time with penable", $time); 
+    269             1     			        $display("------------------------------------------------");
+    270             1                         err=err+1;
+    277             1                         pslverr_high = 1;
+    279             1     			        $display("------------------------------------------------");
+    280             1     			        $display("t=%10d FAIL: pslverr asserts unexpectedly", $time); 
+    281             1     			        $display("------------------------------------------------");
+    282             1                         err=err+1;
+    307             1     			$display("------------------------------------------------");
+    308             1     			$display("t=%10d FAIL: rdata at addr %x is not correct",$time, in_addr);
+    309             1     			$display("Exp: %x Actual:%x",exp_data & mask, in_data & mask);
+    310             1     			$display("------------------------------------------------");
+    311             1                 #100;
+    312             1                 err=err+1;
+    313             1                         #100;
+    314             1                         $finish;
+    357             1                 for( idx =0; idx < cnt_chk_cycle; idx = idx+1) begin
+    357             2     
+    358             1                     @(posedge clk); 
+    359             1                     #1;
+    361             1                         exp_cnt = exp_cnt + 1;
+    404             1                     $display("DBG MODE IS OFF");
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        46        31        15      67.3
+
+================================Branch Details================================
+
+Branch Coverage for file ../tb/test_bench.v --
+
+------------------------------------IF Branch------------------------------------
+    158                                    10381     Count coming in to IF
+    158             1                    ***0***                     if( pready == 1) begin
+                                           10381     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    168                                       13     Count coming in to IF
+    168             1                         13                     if( pslverr_exp ) begin
+    170             1                    ***0***                     end else begin
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    209                                     4294     Count coming in to IF
+    209             1                    ***0***                     if( pready == 1) begin
+                                            4294     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    219                                     4296     Count coming in to IF
+    219             1                    ***0***                 if( pslverr && !pslverr_exp ) begin
+                                            4296     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    220                                  ***0***     Count coming in to IF
+    220             1                    ***0***                     if( pslverr_exp ) begin
+    222             1                    ***0***                     end else begin
+Branch totals: 0 hits of 2 branches = 0.0%
+
+------------------------------------IF Branch------------------------------------
+    262                                       52     Count coming in to IF
+    262             1                    ***0***                 if( apb_err_penable || apb_err_psel ) begin 
+    264             1                         52                 end else begin
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    266                                       52     Count coming in to IF
+    266             1                    ***0***                     if( pready == 1) begin
+                                              52     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    275                                       52     Count coming in to IF
+    275             1                    ***0***                 if( pslverr ) begin
+                                              52     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    276                                  ***0***     Count coming in to IF
+    276             1                    ***0***                     if( pslverr_exp ) begin
+    278             1                    ***0***                     end else begin
+Branch totals: 0 hits of 2 branches = 0.0%
+
+------------------------------------IF Branch------------------------------------
+    306                                      172     Count coming in to IF
+    306             1                    ***0***     		if( (in_data & mask) !== (exp_data & mask) ) begin
+    315             1                        172     		end else begin
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    360                                  ***0***     Count coming in to IF
+    360             1                    ***0***                     if( div_val == 0 || (div_val!=0 && (idx > 0) && (idx % (1 << div_val)) == 0)) 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.0%
+
+------------------------------------IF Branch------------------------------------
+    401                                        2     Count coming in to IF
+    401             1                          2                 if( val )
+    403             1                    ***0***                 else
+Branch totals: 1 hit of 2 branches = 50.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms             14         6         8      42.8
+
+================================Condition Details================================
+
+Condition Coverage for file ../tb/test_bench.v --
+
+
+
+----------------Focused Condition View-------------------
+Line       219 Item    1             if( pslverr && !pslverr_exp ) begin
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+      pslverr         N  '_1' not hit             Hit '_1'
+  pslverr_exp         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:         13  pslverr_0             { 0- }                        
+  Row   2:    ***0***  pslverr_1             { 10 }                        
+  Row   3:    ***0***  pslverr_exp_0         { 10 }                        
+  Row   4:    ***0***  pslverr_exp_1         { 11 }                        
+
+NOTE:
+  * Order of matching input pattern values: {pslverr,pslverr_exp}
+
+----------------Focused Condition View-------------------
+Line       262 Item    1             if( apb_err_penable || apb_err_psel ) begin 
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  apb_err_penable         N  '_1' not hit             Hit '_1'
+     apb_err_psel         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  apb_err_penable_0     { 00 }                        
+  Row   2:    ***0***  apb_err_penable_1     { 1- }                        
+  Row   3:          1  apb_err_psel_0        { 00 }                        
+  Row   4:    ***0***  apb_err_psel_1        { 01 }                        
+
+NOTE:
+  * Order of matching input pattern values: {apb_err_penable,apb_err_psel}
+
+----------------Focused Condition View-------------------
+Line       360 Item    1                 if( div_val == 0 || (div_val!=0 && (idx > 0) && (idx % (1 << div_val)) == 0)) 
+Condition totals: 0 of 4 input terms covered = 0.0%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+                 (div_val == 0)         N  No hits                  Hit '_0' and '_1'
+                 (div_val != 0)         N  No hits                  Hit '_0' and '_1'
+                      (idx > 0)         N  No hits                  Hit '_0' and '_1'
+  ((idx % (1 << div_val)) == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                       Matching input patterns       
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (div_val == 0)_0                 { 00-- 010- 0110 }            
+  Row   2:    ***0***  (div_val == 0)_1                 { 1--- }                      
+  Row   3:    ***0***  (div_val != 0)_0                 { 00-- }                      
+  Row   4:    ***0***  (div_val != 0)_1                 { 0111 }                      
+  Row   5:    ***0***  (idx > 0)_0                      { 010- }                      
+  Row   6:    ***0***  (idx > 0)_1                      { 0111 }                      
+  Row   7:    ***0***  ((idx % (1 << div_val)) == 0)_0  { 0110 }                      
+  Row   8:    ***0***  ((idx % (1 << div_val)) == 0)_1  { 0111 }                      
+
+NOTE:
+  * Order of matching input pattern values: {(div_val == 0),(div_val != 0),(idx > 0),((idx % (1 << div_val)) == 0)}
+
+
+
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms            21        15         6      71.4
+
+================================Expression Details================================
+
+Expression Coverage for file ../tb/test_bench.v --
+
+----------------Focused Expression View-----------------
+Line       448 Item    1     assign tim_en_wr_set = psel & penable & pwrite & (paddr == ADDR_TCR ) & pwdata[0];
+Expression totals: 3 of 5 input terms covered = 60.0%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          psel         N  '_0' not hit             Hit '_0'
+        pwrite         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  psel_0                { 01111 }                     
+  Row   2:          7  psel_1                { 11111 }                     
+  Row   3:          7  penable_0             { 10111 }                     
+  Row   4:          7  penable_1             { 11111 }                     
+  Row   5:    ***0***  pwrite_0              { 11011 }                     
+  Row   6:          7  pwrite_1              { 11111 }                     
+  Row   7:         11  (paddr == 0)_0        { 11101 }                     
+  Row   8:          7  (paddr == 0)_1        { 11111 }                     
+  Row   9:          8  pwdata[0]_0           { 11110 }                     
+ Row   10:          7  pwdata[0]_1           { 11111 }                     
+
+NOTE:
+  * Order of matching input pattern values: {psel,penable,pwrite,(paddr == 0),pwdata[0]}
+
+----------------Focused Expression View-----------------
+Line       449 Item    1     assign tim_en_wr_clr = psel & penable & pwrite & (paddr == ADDR_TCR ) & ~pwdata[0];
+Expression totals: 4 of 5 input terms covered = 80.0%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          psel         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          8  pwdata[0]_0           { 01111 }                     
+  Row   2:          7  pwdata[0]_1           { 11111 }                     
+  Row   3:    ***0***  psel_0                { 00111 }                     
+  Row   4:          8  psel_1                { 01111 }                     
+  Row   5:          8  penable_0             { 01011 }                     
+  Row   6:          8  penable_1             { 01111 }                     
+  Row   7:          5  pwrite_0              { 01101 }                     
+  Row   8:          8  pwrite_1              { 01111 }                     
+  Row   9:          9  (paddr == 0)_0        { 01110 }                     
+ Row   10:          8  (paddr == 0)_1        { 01111 }                     
+
+NOTE:
+  * Order of matching input pattern values: {pwdata[0],psel,penable,pwrite,(paddr == 0)}
+
+----------------Focused Expression View-----------------
+Line       450 Item    1     assign halt_wr_set   = psel & penable & pwrite & (paddr == ADDR_THCSR ) & pwdata[0] & dbg_mode;
+Expression totals: 4 of 6 input terms covered = 66.6%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+           psel         N  '_0' not hit             Hit '_0'
+         pwrite         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  psel_0                { 011111 }                    
+  Row   2:          2  psel_1                { 111111 }                    
+  Row   3:          2  penable_0             { 101111 }                    
+  Row   4:          2  penable_1             { 111111 }                    
+  Row   5:    ***0***  pwrite_0              { 110111 }                    
+  Row   6:          2  pwrite_1              { 111111 }                    
+  Row   7:          2  (paddr == 28)_0       { 111011 }                    
+  Row   8:          2  (paddr == 28)_1       { 111111 }                    
+  Row   9:          2  pwdata[0]_0           { 111101 }                    
+ Row   10:          2  pwdata[0]_1           { 111111 }                    
+ Row   11:          3  dbg_mode_0            { 111110 }                    
+ Row   12:          2  dbg_mode_1            { 111111 }                    
+
+NOTE:
+  * Order of matching input pattern values: {psel,penable,pwrite,(paddr == 28),pwdata[0],dbg_mode}
+
+----------------Focused Expression View-----------------
+Line       451 Item    1     assign halt_wr_clr   = psel & penable & pwrite & (paddr == ADDR_THCSR ) & ~pwdata[0];
+Expression totals: 4 of 5 input terms covered = 80.0%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+           psel         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  pwdata[0]_0           { 01111 }                     
+  Row   2:          4  pwdata[0]_1           { 11111 }                     
+  Row   3:    ***0***  psel_0                { 00111 }                     
+  Row   4:          5  psel_1                { 01111 }                     
+  Row   5:          5  penable_0             { 01011 }                     
+  Row   6:          5  penable_1             { 01111 }                     
+  Row   7:          5  pwrite_0              { 01101 }                     
+  Row   8:          5  pwrite_1              { 01111 }                     
+  Row   9:         10  (paddr == 28)_0       { 01110 }                     
+ Row   10:          5  (paddr == 28)_1       { 01111 }                     
+
+NOTE:
+  * Order of matching input pattern values: {pwdata[0],psel,penable,pwrite,(paddr == 28)}
+
+
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    986       713       273      72.3
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../tb/test_bench.v --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+         21                                  rst_n           2          13      100.00 
+         21                                    clk          13          13      100.00 
+         22                                 pwrite          12          12      100.00 
+         22                                   psel          13          13      100.00 
+         22                                penable          13          13      100.00 
+         22                               dbg_mode           0           2       50.00 
+         23                               paddr[9]           1           1      100.00 
+         23                               paddr[8]           1           1      100.00 
+         23                               paddr[7]           1           1      100.00 
+         23                               paddr[6]           1           1      100.00 
+         23                               paddr[5]           1           1      100.00 
+         23                               paddr[4]           8           8      100.00 
+         23                               paddr[3]          10          10      100.00 
+         23                               paddr[2]          12          12      100.00 
+         23                               paddr[1]           1           1      100.00 
+         23                              paddr[11]           1           1      100.00 
+         23                              paddr[10]           1           1      100.00 
+         23                               paddr[0]           1           1      100.00 
+         24                              pwdata[9]          11          11      100.00 
+         24                              pwdata[8]          11          11      100.00 
+         24                              pwdata[7]           9           9      100.00 
+         24                              pwdata[6]          11          11      100.00 
+         24                              pwdata[5]          11          11      100.00 
+         24                              pwdata[4]          11          11      100.00 
+         24                              pwdata[3]           9           9      100.00 
+         24                             pwdata[31]           8           8      100.00 
+         24                             pwdata[30]          10          10      100.00 
+         24                              pwdata[2]          11          11      100.00 
+         24                             pwdata[29]          10          10      100.00 
+         24                             pwdata[28]          10          10      100.00 
+         24                             pwdata[27]           8           8      100.00 
+         24                             pwdata[26]          10          10      100.00 
+         24                             pwdata[25]          10          10      100.00 
+         24                             pwdata[24]          10          10      100.00 
+         24                             pwdata[23]           8           8      100.00 
+         24                             pwdata[22]          10          10      100.00 
+         24                             pwdata[21]          10          10      100.00 
+         24                             pwdata[20]          10          10      100.00 
+         24                              pwdata[1]          12          12      100.00 
+         24                             pwdata[19]           8           8      100.00 
+         24                             pwdata[18]          10          10      100.00 
+         24                             pwdata[17]          10          10      100.00 
+         24                             pwdata[16]          10          10      100.00 
+         24                             pwdata[15]           8           8      100.00 
+         24                             pwdata[14]          10          10      100.00 
+         24                             pwdata[13]          10          10      100.00 
+         24                             pwdata[12]          10          10      100.00 
+         24                             pwdata[11]           9           9      100.00 
+         24                             pwdata[10]          11          11      100.00 
+         24                              pwdata[0]          12          12      100.00 
+         25                               pstrb[3]           1           1      100.00 
+         25                               pstrb[2]           1           1      100.00 
+         25                               pstrb[1]           1           1      100.00 
+         25                               pstrb[0]           1           1      100.00 
+         26                              prdata[9]          10          10      100.00 
+         26                              prdata[8]          12          12      100.00 
+         26                              prdata[7]           5           5      100.00 
+         26                              prdata[6]           7           7      100.00 
+         26                              prdata[5]           8           8      100.00 
+         26                              prdata[4]          10          10      100.00 
+         26                              prdata[3]           6           6      100.00 
+         26                             prdata[31]           6           6      100.00 
+         26                             prdata[30]           7           7      100.00 
+         26                              prdata[2]           8           8      100.00 
+         26                             prdata[29]           9           9      100.00 
+         26                             prdata[28]           9           9      100.00 
+         26                             prdata[27]           6           6      100.00 
+         26                             prdata[26]           7           7      100.00 
+         26                             prdata[25]           9           9      100.00 
+         26                             prdata[24]           9           9      100.00 
+         26                             prdata[23]           6           6      100.00 
+         26                             prdata[22]           7           7      100.00 
+         26                             prdata[21]           9           9      100.00 
+         26                             prdata[20]           9           9      100.00 
+         26                              prdata[1]          11          11      100.00 
+         26                             prdata[19]           6           6      100.00 
+         26                             prdata[18]           7           7      100.00 
+         26                             prdata[17]           9           9      100.00 
+         26                             prdata[16]           9           9      100.00 
+         26                             prdata[15]           6           6      100.00 
+         26                             prdata[14]           7           7      100.00 
+         26                             prdata[13]           9           9      100.00 
+         26                             prdata[12]           9           9      100.00 
+         26                             prdata[11]           7           7      100.00 
+         26                             prdata[10]           7           7      100.00 
+         26                              prdata[0]          12          12      100.00 
+         27                                 pready          13          13      100.00 
+         28                                tim_int           3           3      100.00 
+         29                                pslverr           2           2      100.00 
+         30                                 err[9]           0           0        0.00 
+         30                                 err[8]           0           0        0.00 
+         30                                 err[7]           0           0        0.00 
+         30                                 err[6]           0           0        0.00 
+         30                                 err[5]           0           0        0.00 
+         30                                 err[4]           0           0        0.00 
+         30                                 err[3]           0           0        0.00 
+         30                                err[31]           0           0        0.00 
+         30                                err[30]           0           0        0.00 
+         30                                 err[2]           0           0        0.00 
+         30                                err[29]           0           0        0.00 
+         30                                err[28]           0           0        0.00 
+         30                                err[27]           0           0        0.00 
+         30                                err[26]           0           0        0.00 
+         30                                err[25]           0           0        0.00 
+         30                                err[24]           0           0        0.00 
+         30                                err[23]           0           0        0.00 
+         30                                err[22]           0           0        0.00 
+         30                                err[21]           0           0        0.00 
+         30                                err[20]           0           0        0.00 
+         30                                 err[1]           0           0        0.00 
+         30                                err[19]           0           0        0.00 
+         30                                err[18]           0           0        0.00 
+         30                                err[17]           0           0        0.00 
+         30                                err[16]           0           0        0.00 
+         30                                err[15]           0           0        0.00 
+         30                                err[14]           0           0        0.00 
+         30                                err[13]           0           0        0.00 
+         30                                err[12]           0           0        0.00 
+         30                                err[11]           0           0        0.00 
+         30                                err[10]           0           0        0.00 
+         30                                 err[0]           0           0        0.00 
+         32                             cnt_chk_en           0           0        0.00 
+         33                       cnt_chk_cycle[9]           0           0        0.00 
+         33                       cnt_chk_cycle[8]           0           0        0.00 
+         33                       cnt_chk_cycle[7]           0           0        0.00 
+         33                       cnt_chk_cycle[6]           0           0        0.00 
+         33                       cnt_chk_cycle[5]           0           0        0.00 
+         33                       cnt_chk_cycle[4]           0           0        0.00 
+         33                       cnt_chk_cycle[3]           0           0        0.00 
+         33                      cnt_chk_cycle[31]           0           0        0.00 
+         33                      cnt_chk_cycle[30]           0           0        0.00 
+         33                       cnt_chk_cycle[2]           0           0        0.00 
+         33                      cnt_chk_cycle[29]           0           0        0.00 
+         33                      cnt_chk_cycle[28]           0           0        0.00 
+         33                      cnt_chk_cycle[27]           0           0        0.00 
+         33                      cnt_chk_cycle[26]           0           0        0.00 
+         33                      cnt_chk_cycle[25]           0           0        0.00 
+         33                      cnt_chk_cycle[24]           0           0        0.00 
+         33                      cnt_chk_cycle[23]           0           0        0.00 
+         33                      cnt_chk_cycle[22]           0           0        0.00 
+         33                      cnt_chk_cycle[21]           0           0        0.00 
+         33                      cnt_chk_cycle[20]           0           0        0.00 
+         33                       cnt_chk_cycle[1]           0           0        0.00 
+         33                      cnt_chk_cycle[19]           0           0        0.00 
+         33                      cnt_chk_cycle[18]           0           0        0.00 
+         33                      cnt_chk_cycle[17]           0           0        0.00 
+         33                      cnt_chk_cycle[16]           0           0        0.00 
+         33                      cnt_chk_cycle[15]           0           0        0.00 
+         33                      cnt_chk_cycle[14]           0           0        0.00 
+         33                      cnt_chk_cycle[13]           0           0        0.00 
+         33                      cnt_chk_cycle[12]           0           0        0.00 
+         33                      cnt_chk_cycle[11]           0           0        0.00 
+         33                      cnt_chk_cycle[10]           0           0        0.00 
+         33                       cnt_chk_cycle[0]           0           0        0.00 
+         34                             div_val[3]           0           0        0.00 
+         34                             div_val[2]           0           0        0.00 
+         34                             div_val[1]           0           0        0.00 
+         34                             div_val[0]           0           0        0.00 
+         35                             exp_cnt[9]           0           0        0.00 
+         35                             exp_cnt[8]           0           0        0.00 
+         35                             exp_cnt[7]           0           0        0.00 
+         35                             exp_cnt[6]           0           0        0.00 
+         35                            exp_cnt[63]           0           0        0.00 
+         35                            exp_cnt[62]           0           0        0.00 
+         35                            exp_cnt[61]           0           0        0.00 
+         35                            exp_cnt[60]           0           0        0.00 
+         35                             exp_cnt[5]           0           0        0.00 
+         35                            exp_cnt[59]           0           0        0.00 
+         35                            exp_cnt[58]           0           0        0.00 
+         35                            exp_cnt[57]           0           0        0.00 
+         35                            exp_cnt[56]           0           0        0.00 
+         35                            exp_cnt[55]           0           0        0.00 
+         35                            exp_cnt[54]           0           0        0.00 
+         35                            exp_cnt[53]           0           0        0.00 
+         35                            exp_cnt[52]           0           0        0.00 
+         35                            exp_cnt[51]           0           0        0.00 
+         35                            exp_cnt[50]           0           0        0.00 
+         35                             exp_cnt[4]           0           0        0.00 
+         35                            exp_cnt[49]           0           0        0.00 
+         35                            exp_cnt[48]           0           0        0.00 
+         35                            exp_cnt[47]           0           0        0.00 
+         35                            exp_cnt[46]           0           0        0.00 
+         35                            exp_cnt[45]           0           0        0.00 
+         35                            exp_cnt[44]           0           0        0.00 
+         35                            exp_cnt[43]           0           0        0.00 
+         35                            exp_cnt[42]           0           0        0.00 
+         35                            exp_cnt[41]           0           0        0.00 
+         35                            exp_cnt[40]           0           0        0.00 
+         35                             exp_cnt[3]           0           0        0.00 
+         35                            exp_cnt[39]           0           0        0.00 
+         35                            exp_cnt[38]           0           0        0.00 
+         35                            exp_cnt[37]           0           0        0.00 
+         35                            exp_cnt[36]           0           0        0.00 
+         35                            exp_cnt[35]           0           0        0.00 
+         35                            exp_cnt[34]           0           0        0.00 
+         35                            exp_cnt[33]           0           0        0.00 
+         35                            exp_cnt[32]           0           0        0.00 
+         35                            exp_cnt[31]           0           0        0.00 
+         35                            exp_cnt[30]           0           0        0.00 
+         35                             exp_cnt[2]           0           0        0.00 
+         35                            exp_cnt[29]           0           0        0.00 
+         35                            exp_cnt[28]           0           0        0.00 
+         35                            exp_cnt[27]           0           0        0.00 
+         35                            exp_cnt[26]           0           0        0.00 
+         35                            exp_cnt[25]           0           0        0.00 
+         35                            exp_cnt[24]           0           0        0.00 
+         35                            exp_cnt[23]           0           0        0.00 
+         35                            exp_cnt[22]           0           0        0.00 
+         35                            exp_cnt[21]           0           0        0.00 
+         35                            exp_cnt[20]           0           0        0.00 
+         35                             exp_cnt[1]           0           0        0.00 
+         35                            exp_cnt[19]           0           0        0.00 
+         35                            exp_cnt[18]           0           0        0.00 
+         35                            exp_cnt[17]           0           0        0.00 
+         35                            exp_cnt[16]           0           0        0.00 
+         35                            exp_cnt[15]           0           0        0.00 
+         35                            exp_cnt[14]           0           0        0.00 
+         35                            exp_cnt[13]           0           0        0.00 
+         35                            exp_cnt[12]           0           0        0.00 
+         35                            exp_cnt[11]           0           0        0.00 
+         35                            exp_cnt[10]           0           0        0.00 
+         35                             exp_cnt[0]           0           0        0.00 
+         37                      golden_cnt_cfg_en           3           3      100.00 
+         38                      golden_cnt_cfg[9]           2           2      100.00 
+         38                      golden_cnt_cfg[8]           2           2      100.00 
+         38                      golden_cnt_cfg[7]           2           2      100.00 
+         38                      golden_cnt_cfg[6]           2           2      100.00 
+         38                     golden_cnt_cfg[63]           1           1      100.00 
+         38                     golden_cnt_cfg[62]           1           1      100.00 
+         38                     golden_cnt_cfg[61]           1           1      100.00 
+         38                     golden_cnt_cfg[60]           1           1      100.00 
+         38                      golden_cnt_cfg[5]           2           2      100.00 
+         38                     golden_cnt_cfg[59]           1           1      100.00 
+         38                     golden_cnt_cfg[58]           1           1      100.00 
+         38                     golden_cnt_cfg[57]           1           1      100.00 
+         38                     golden_cnt_cfg[56]           1           1      100.00 
+         38                     golden_cnt_cfg[55]           1           1      100.00 
+         38                     golden_cnt_cfg[54]           1           1      100.00 
+         38                     golden_cnt_cfg[53]           1           1      100.00 
+         38                     golden_cnt_cfg[52]           1           1      100.00 
+         38                     golden_cnt_cfg[51]           1           1      100.00 
+         38                     golden_cnt_cfg[50]           1           1      100.00 
+         38                      golden_cnt_cfg[4]           2           2      100.00 
+         38                     golden_cnt_cfg[49]           1           1      100.00 
+         38                     golden_cnt_cfg[48]           1           1      100.00 
+         38                     golden_cnt_cfg[47]           1           1      100.00 
+         38                     golden_cnt_cfg[46]           1           1      100.00 
+         38                     golden_cnt_cfg[45]           1           1      100.00 
+         38                     golden_cnt_cfg[44]           1           1      100.00 
+         38                     golden_cnt_cfg[43]           1           1      100.00 
+         38                     golden_cnt_cfg[42]           1           1      100.00 
+         38                     golden_cnt_cfg[41]           1           1      100.00 
+         38                     golden_cnt_cfg[40]           2           2      100.00 
+         38                      golden_cnt_cfg[3]           2           2      100.00 
+         38                     golden_cnt_cfg[39]           2           2      100.00 
+         38                     golden_cnt_cfg[38]           2           2      100.00 
+         38                     golden_cnt_cfg[37]           2           2      100.00 
+         38                     golden_cnt_cfg[36]           2           2      100.00 
+         38                     golden_cnt_cfg[35]           2           2      100.00 
+         38                     golden_cnt_cfg[34]           2           2      100.00 
+         38                     golden_cnt_cfg[33]           2           2      100.00 
+         38                     golden_cnt_cfg[32]           2           2      100.00 
+         38                     golden_cnt_cfg[31]           2           2      100.00 
+         38                     golden_cnt_cfg[30]           2           2      100.00 
+         38                      golden_cnt_cfg[2]           2           2      100.00 
+         38                     golden_cnt_cfg[29]           2           2      100.00 
+         38                     golden_cnt_cfg[28]           2           2      100.00 
+         38                     golden_cnt_cfg[27]           2           2      100.00 
+         38                     golden_cnt_cfg[26]           2           2      100.00 
+         38                     golden_cnt_cfg[25]           2           2      100.00 
+         38                     golden_cnt_cfg[24]           2           2      100.00 
+         38                     golden_cnt_cfg[23]           2           2      100.00 
+         38                     golden_cnt_cfg[22]           2           2      100.00 
+         38                     golden_cnt_cfg[21]           2           2      100.00 
+         38                     golden_cnt_cfg[20]           2           2      100.00 
+         38                      golden_cnt_cfg[1]           2           2      100.00 
+         38                     golden_cnt_cfg[19]           2           2      100.00 
+         38                     golden_cnt_cfg[18]           2           2      100.00 
+         38                     golden_cnt_cfg[17]           2           2      100.00 
+         38                     golden_cnt_cfg[16]           2           2      100.00 
+         38                     golden_cnt_cfg[15]           2           2      100.00 
+         38                     golden_cnt_cfg[14]           2           2      100.00 
+         38                     golden_cnt_cfg[13]           2           2      100.00 
+         38                     golden_cnt_cfg[12]           2           2      100.00 
+         38                     golden_cnt_cfg[11]           2           2      100.00 
+         38                     golden_cnt_cfg[10]           2           2      100.00 
+         38                      golden_cnt_cfg[0]           0           0        0.00 
+         39                          golden_cnt[9]           3           4      100.00 
+         39                          golden_cnt[8]           4           4      100.00 
+         39                          golden_cnt[7]           4           4      100.00 
+         39                          golden_cnt[6]           4           4      100.00 
+         39                         golden_cnt[63]           1           1      100.00 
+         39                         golden_cnt[62]           1           1      100.00 
+         39                         golden_cnt[61]           1           1      100.00 
+         39                         golden_cnt[60]           1           1      100.00 
+         39                          golden_cnt[5]           4           5      100.00 
+         39                         golden_cnt[59]           1           1      100.00 
+         39                         golden_cnt[58]           1           1      100.00 
+         39                         golden_cnt[57]           1           1      100.00 
+         39                         golden_cnt[56]           1           1      100.00 
+         39                         golden_cnt[55]           1           1      100.00 
+         39                         golden_cnt[54]           1           1      100.00 
+         39                         golden_cnt[53]           1           1      100.00 
+         39                         golden_cnt[52]           1           1      100.00 
+         39                         golden_cnt[51]           1           1      100.00 
+         39                         golden_cnt[50]           1           1      100.00 
+         39                          golden_cnt[4]           6           6      100.00 
+         39                         golden_cnt[49]           1           1      100.00 
+         39                         golden_cnt[48]           1           1      100.00 
+         39                         golden_cnt[47]           1           1      100.00 
+         39                         golden_cnt[46]           1           1      100.00 
+         39                         golden_cnt[45]           1           1      100.00 
+         39                         golden_cnt[44]           1           1      100.00 
+         39                         golden_cnt[43]           1           1      100.00 
+         39                         golden_cnt[42]           1           1      100.00 
+         39                         golden_cnt[41]           1           1      100.00 
+         39                         golden_cnt[40]           2           2      100.00 
+         39                          golden_cnt[3]           6           7      100.00 
+         39                         golden_cnt[39]           2           2      100.00 
+         39                         golden_cnt[38]           2           2      100.00 
+         39                         golden_cnt[37]           2           2      100.00 
+         39                         golden_cnt[36]           2           2      100.00 
+         39                         golden_cnt[35]           2           2      100.00 
+         39                         golden_cnt[34]           2           2      100.00 
+         39                         golden_cnt[33]           2           2      100.00 
+         39                         golden_cnt[32]           2           2      100.00 
+         39                         golden_cnt[31]           2           2      100.00 
+         39                         golden_cnt[30]           2           2      100.00 
+         39                          golden_cnt[2]           7           7      100.00 
+         39                         golden_cnt[29]           2           2      100.00 
+         39                         golden_cnt[28]           2           2      100.00 
+         39                         golden_cnt[27]           2           2      100.00 
+         39                         golden_cnt[26]           2           2      100.00 
+         39                         golden_cnt[25]           2           2      100.00 
+         39                         golden_cnt[24]           2           2      100.00 
+         39                         golden_cnt[23]           2           2      100.00 
+         39                         golden_cnt[22]           2           2      100.00 
+         39                         golden_cnt[21]           2           2      100.00 
+         39                         golden_cnt[20]           2           2      100.00 
+         39                          golden_cnt[1]           7           7      100.00 
+         39                         golden_cnt[19]           2           2      100.00 
+         39                         golden_cnt[18]           2           2      100.00 
+         39                         golden_cnt[17]           2           2      100.00 
+         39                         golden_cnt[16]           2           2      100.00 
+         39                         golden_cnt[15]           2           2      100.00 
+         39                         golden_cnt[14]           2           2      100.00 
+         39                         golden_cnt[13]           2           2      100.00 
+         39                         golden_cnt[12]           2           2      100.00 
+         39                         golden_cnt[11]           2           2      100.00 
+         39                         golden_cnt[10]           2           3      100.00 
+         39                          golden_cnt[0]           7           7      100.00 
+         41                           apb_err_psel           1           1      100.00 
+         42                        apb_err_penable           1           1      100.00 
+         43                       pslverr_chk_fail           0           0        0.00 
+         43                        pready_chk_fail           0           0        0.00 
+         45                            pslverr_exp           2           2      100.00 
+         46                           pslverr_high           2           2      100.00 
+        434                                 cnt[9]           3           4      100.00 
+        434                                 cnt[8]           4           4      100.00 
+        434                                 cnt[7]           4           4      100.00 
+        434                                 cnt[6]           4           4      100.00 
+        434                                cnt[63]           1           1      100.00 
+        434                                cnt[62]           1           1      100.00 
+        434                                cnt[61]           1           1      100.00 
+        434                                cnt[60]           1           1      100.00 
+        434                                 cnt[5]           4           5      100.00 
+        434                                cnt[59]           1           1      100.00 
+        434                                cnt[58]           1           1      100.00 
+        434                                cnt[57]           1           1      100.00 
+        434                                cnt[56]           1           1      100.00 
+        434                                cnt[55]           1           1      100.00 
+        434                                cnt[54]           1           1      100.00 
+        434                                cnt[53]           1           1      100.00 
+        434                                cnt[52]           1           1      100.00 
+        434                                cnt[51]           1           1      100.00 
+        434                                cnt[50]           1           1      100.00 
+        434                                 cnt[4]           6           6      100.00 
+        434                                cnt[49]           1           1      100.00 
+        434                                cnt[48]           1           1      100.00 
+        434                                cnt[47]           1           1      100.00 
+        434                                cnt[46]           1           1      100.00 
+        434                                cnt[45]           1           1      100.00 
+        434                                cnt[44]           1           1      100.00 
+        434                                cnt[43]           1           1      100.00 
+        434                                cnt[42]           1           1      100.00 
+        434                                cnt[41]           1           1      100.00 
+        434                                cnt[40]           2           2      100.00 
+        434                                 cnt[3]           6           7      100.00 
+        434                                cnt[39]           2           2      100.00 
+        434                                cnt[38]           2           2      100.00 
+        434                                cnt[37]           2           2      100.00 
+        434                                cnt[36]           2           2      100.00 
+        434                                cnt[35]           2           2      100.00 
+        434                                cnt[34]           2           2      100.00 
+        434                                cnt[33]           2           2      100.00 
+        434                                cnt[32]           2           2      100.00 
+        434                                cnt[31]           2           2      100.00 
+        434                                cnt[30]           2           2      100.00 
+        434                                 cnt[2]           7           7      100.00 
+        434                                cnt[29]           2           2      100.00 
+        434                                cnt[28]           2           2      100.00 
+        434                                cnt[27]           2           2      100.00 
+        434                                cnt[26]           2           2      100.00 
+        434                                cnt[25]           2           2      100.00 
+        434                                cnt[24]           2           2      100.00 
+        434                                cnt[23]           2           2      100.00 
+        434                                cnt[22]           2           2      100.00 
+        434                                cnt[21]           2           2      100.00 
+        434                                cnt[20]           2           2      100.00 
+        434                                 cnt[1]           7           7      100.00 
+        434                                cnt[19]           2           2      100.00 
+        434                                cnt[18]           2           2      100.00 
+        434                                cnt[17]           2           2      100.00 
+        434                                cnt[16]           2           2      100.00 
+        434                                cnt[15]           2           2      100.00 
+        434                                cnt[14]           2           2      100.00 
+        434                                cnt[13]           2           2      100.00 
+        434                                cnt[12]           2           2      100.00 
+        434                                cnt[11]           2           2      100.00 
+        434                                cnt[10]           2           3      100.00 
+        434                                 cnt[0]           7           7      100.00 
+        438                            cnt_next[9]           3           4      100.00 
+        438                            cnt_next[8]           4           4      100.00 
+        438                            cnt_next[7]           4           4      100.00 
+        438                            cnt_next[6]           4           4      100.00 
+        438                           cnt_next[63]           1           1      100.00 
+        438                           cnt_next[62]           1           1      100.00 
+        438                           cnt_next[61]           1           1      100.00 
+        438                           cnt_next[60]           1           1      100.00 
+        438                            cnt_next[5]           4           5      100.00 
+        438                           cnt_next[59]           1           1      100.00 
+        438                           cnt_next[58]           1           1      100.00 
+        438                           cnt_next[57]           1           1      100.00 
+        438                           cnt_next[56]           1           1      100.00 
+        438                           cnt_next[55]           1           1      100.00 
+        438                           cnt_next[54]           1           1      100.00 
+        438                           cnt_next[53]           1           1      100.00 
+        438                           cnt_next[52]           1           1      100.00 
+        438                           cnt_next[51]           1           1      100.00 
+        438                           cnt_next[50]           1           1      100.00 
+        438                            cnt_next[4]           6           6      100.00 
+        438                           cnt_next[49]           1           1      100.00 
+        438                           cnt_next[48]           1           1      100.00 
+        438                           cnt_next[47]           1           1      100.00 
+        438                           cnt_next[46]           1           1      100.00 
+        438                           cnt_next[45]           1           1      100.00 
+        438                           cnt_next[44]           1           1      100.00 
+        438                           cnt_next[43]           1           1      100.00 
+        438                           cnt_next[42]           1           1      100.00 
+        438                           cnt_next[41]           1           1      100.00 
+        438                           cnt_next[40]           2           2      100.00 
+        438                            cnt_next[3]           6           7      100.00 
+        438                           cnt_next[39]           2           2      100.00 
+        438                           cnt_next[38]           2           2      100.00 
+        438                           cnt_next[37]           2           2      100.00 
+        438                           cnt_next[36]           2           2      100.00 
+        438                           cnt_next[35]           2           2      100.00 
+        438                           cnt_next[34]           2           2      100.00 
+        438                           cnt_next[33]           2           2      100.00 
+        438                           cnt_next[32]           2           2      100.00 
+        438                           cnt_next[31]           2           2      100.00 
+        438                           cnt_next[30]           2           2      100.00 
+        438                            cnt_next[2]           7           7      100.00 
+        438                           cnt_next[29]           2           2      100.00 
+        438                           cnt_next[28]           2           2      100.00 
+        438                           cnt_next[27]           2           2      100.00 
+        438                           cnt_next[26]           2           2      100.00 
+        438                           cnt_next[25]           2           2      100.00 
+        438                           cnt_next[24]           2           2      100.00 
+        438                           cnt_next[23]           2           2      100.00 
+        438                           cnt_next[22]           2           2      100.00 
+        438                           cnt_next[21]           2           2      100.00 
+        438                           cnt_next[20]           2           2      100.00 
+        438                            cnt_next[1]           7           7      100.00 
+        438                           cnt_next[19]           2           2      100.00 
+        438                           cnt_next[18]           2           2      100.00 
+        438                           cnt_next[17]           2           2      100.00 
+        438                           cnt_next[16]           2           2      100.00 
+        438                           cnt_next[15]           2           2      100.00 
+        438                           cnt_next[14]           2           2      100.00 
+        438                           cnt_next[13]           2           2      100.00 
+        438                           cnt_next[12]           2           2      100.00 
+        438                           cnt_next[11]           2           2      100.00 
+        438                           cnt_next[10]           2           3      100.00 
+        438                            cnt_next[0]           7           7      100.00 
+        439                          tim_en_wr_set           7           7      100.00 
+        440                          tim_en_wr_clr           8           8      100.00 
+        441                            halt_wr_set           2           2      100.00 
+        442                            halt_wr_clr           5           5      100.00 
+        443                                 tim_en           7           7      100.00 
+        444                                   halt           2           2      100.00 
+        445                              tim_en_1d           7           7      100.00 
+        446                                halt_1d           2           2      100.00 
+
+Total Node Count     =        493 
+Toggled Node Count   =        356 
+Untoggled Node Count =        137 
+
+Toggle Coverage      =       72.3% (713 of 986 bins)
+
+File: run_test.v
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                          296       287         9      96.9
+
+================================Statement Details================================
+
+Statement Coverage for file run_test.v --
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        92        46        46      50.0
+
+================================Branch Details================================
+
+Branch Coverage for file run_test.v --
+
+------------------------------------IF Branch------------------------------------
+    18                                         8     Count coming in to IF
+    18              1                          1                 if( status == 0 ) begin
+    23              1                    ***0***                 test_bench.apb_rd( ADDR_TCR, task_rdata);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    26                                         1     Count coming in to IF
+    26              1                          1             
+    31              1                    ***0***             test_bench.cmp_data( ADDR_TCR, task_rdata, 32'h800, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    34                                         1     Count coming in to IF
+    34              1                    ***0***             test_bench.apb_wr(ADDR_TCR, 1);
+    36              1                          1             test_bench.tsk_set_pslverr_exp(1);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              1                    ***0***             test_bench.tsk_set_pslverr_exp(1);
+    38              1                          1             test_bench.apb_wr(ADDR_TCR, 32'h103);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    37                                         1     Count coming in to IF
+    37              1                          1     
+    42              1                    ***0***                 err = 1;
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                    ***0***             test_bench.apb_wr(ADDR_TCR, 32'h103);
+    45              1                          1             test_bench.apb_rd( ADDR_TCR, task_rdata);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    40                                         1     Count coming in to IF
+    40              1                    ***0***             if( status == 0 ) begin
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              1                    ***0***             end
+    45              1                          1             test_bench.apb_rd( ADDR_TCR, task_rdata);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    46                                         1     Count coming in to IF
+    46              1                    ***0***             test_bench.cmp_data( ADDR_TCR, task_rdata, 32'h1, 32'hffff_ffff);
+    48              1                          1     
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    49                                         1     Count coming in to IF
+    49              1                    ***0***             test_bench.apb_wr(ADDR_TCR, 32'h100);
+    51              1                          1             if( status == 0 ) begin
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    51                                         1     Count coming in to IF
+    51              1                    ***0***             if( status == 0 ) begin
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    55                                         1     Count coming in to IF
+    55              1                          1             #1 status = 0;
+    60              1                    ***0***             test_bench.tsk_rd_pslverr(status);
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    56                                         1     Count coming in to IF
+    56              1                          1             test_bench.apb_rd( ADDR_TCR, task_rdata);
+    61              1                    ***0***             if( status == 0 ) begin
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    58                                         1     Count coming in to IF
+    58              1                          1     
+    63              1                    ***0***                 err = 1;
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    61                                         1     Count coming in to IF
+    61              1                    ***0***             if( status == 0 ) begin
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    76                                       511     Count coming in to IF
+    76              1                    ***0***             test_bench.cmp_data( ADDR_TCR, task_rdata, 32'h102, 32'hffff_ffff);
+    83              1                        511                 $display("Test_result FAILED");
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    81                                         1     Count coming in to IF
+    81              1                          1     
+    86              1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    82                                         1     Count coming in to IF
+    82              1                    ***0***             if( test_bench.err!=0 || err != 0 )
+    84              1                          1             else
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    83                                         1     Count coming in to IF
+    83              1                    ***0***                 $display("Test_result FAILED");
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    95                                         1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    104                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    105                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    116                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    117                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    123                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    129                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    133                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    135                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    150                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    155                                        1     Count coming in to IF
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    157                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    168                                      511     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    169                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    176                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    182                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    194                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    211                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    216                                        2     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    230                                      511     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    232                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    234                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    241                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    242                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    249                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    260                                      511     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+------------------------------------IF Branch------------------------------------
+    285                                        1     Count coming in to IF
+Branch totals: 1 hit of 2 branches = 50.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms             12         0        12       0.0
+
+================================Condition Details================================
+
+Condition Coverage for file run_test.v --
+
+----------------Focused Condition View-------------------
+Line       26 Item    1         
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (cnt[63:32] == 1)         N  '_0' not hit             Hit '_0'
+   (cnt[31:0] < 10)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt[63:32] == 1)_0   { 0- }                        
+  Row   2:          1  (cnt[63:32] == 1)_1   { 11 }                        
+  Row   3:    ***0***  (cnt[31:0] < 10)_0    { 10 }                        
+  Row   4:          1  (cnt[31:0] < 10)_1    { 11 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(cnt[63:32] == 1),(cnt[31:0] < 10)}
+
+----------------Focused Condition View-------------------
+Line       55 Item    1         #1 status = 0;
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (cnt[63:32] == 0)         N  '_0' not hit             Hit '_0'
+   (cnt[31:0] < 10)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt[63:32] == 0)_0   { 0- }                        
+  Row   2:          1  (cnt[63:32] == 0)_1   { 11 }                        
+  Row   3:    ***0***  (cnt[31:0] < 10)_0    { 10 }                        
+  Row   4:          1  (cnt[31:0] < 10)_1    { 11 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(cnt[63:32] == 0),(cnt[31:0] < 10)}
+
+----------------Focused Condition View-------------------
+Line       82 Item    1         if( test_bench.err!=0 || err != 0 )
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  (err != 0)         N  '_1' not hit             Hit '_1'
+  (err != 0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (err != 0)_0          { 00 }                        
+  Row   2:    ***0***  (err != 0)_1          { 1- }                        
+  Row   3:          1  (err != 0)_0          { 00 }                        
+  Row   4:    ***0***  (err != 0)_1          { 01 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(err != 0),(err != 0)}
+
+----------------Focused Condition View-------------------
+Line       83 Item    1             $display("Test_result FAILED");
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (cnt < 250)         N  '_1' not hit             Hit '_1'
+  (cnt > 270)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cnt < 250)_0         { 00 }                        
+  Row   2:    ***0***  (cnt < 250)_1         { 1- }                        
+  Row   3:          1  (cnt > 270)_0         { 00 }                        
+  Row   4:    ***0***  (cnt > 270)_1         { 01 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(cnt < 250),(cnt > 270)}
+
+----------------Focused Condition View-------------------
+Line       105 Item    1 
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (cnt[63:32] == 1)         N  '_0' not hit             Hit '_0'
+   (cnt[31:0] < 10)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt[63:32] == 1)_0   { 0- }                        
+  Row   2:          1  (cnt[63:32] == 1)_1   { 11 }                        
+  Row   3:    ***0***  (cnt[31:0] < 10)_0    { 10 }                        
+  Row   4:          1  (cnt[31:0] < 10)_1    { 11 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(cnt[63:32] == 1),(cnt[31:0] < 10)}
+
+----------------Focused Condition View-------------------
+Line       155 Item    1 
+Condition totals: 0 of 2 input terms covered = 0.0%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (cnt < 250)         N  '_1' not hit             Hit '_1'
+  (cnt > 270)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cnt < 250)_0         { 00 }                        
+  Row   2:    ***0***  (cnt < 250)_1         { 1- }                        
+  Row   3:          1  (cnt > 270)_0         { 00 }                        
+  Row   4:    ***0***  (cnt > 270)_1         { 01 }                        
+
+NOTE:
+  * Order of matching input pattern values: {(cnt < 250),(cnt > 270)}
+
+
+
+
+Total Coverage By File (code coverage only, filtered view): 65.2%
+

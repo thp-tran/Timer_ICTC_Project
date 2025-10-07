@@ -1,0 +1,80 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit cnt_counting_chk.ucdb; log -r /*;run -all} -l cnt_counting_chk.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit cnt_counting_chk.ucdb 
+#  log -r /* 
+# run -all 
+# ===============================================================
+# ====== Test Case: check counter couting check =================
+# ===============================================================
+# check at boundary of TDR0
+# t=       100 [TB_WRITE]: addr=00000004 data=ffffff00
+# t=       276 [TB_WRITE]: addr=00000008 data=00000000
+# t=       476 [TB_WRITE]: addr=00000000 data=00000001
+# t=     13675 [TB_READ]: addr=00000004 rdata=00000003
+# t=     13875 [TB_READ]: addr=00000008 rdata=00000001
+# ------------------------------------------------
+# t=     13875 PASSED: cnt matches expect value 
+# Actual:           4294967299
+# ------------------------------------------------
+# t=     13875 [TB_WRITE]: addr=00000000 data=00000000
+# check at boundary of TDR1
+# t=     14076 [TB_WRITE]: addr=00000004 data=ffffff00
+# t=     14276 [TB_WRITE]: addr=00000008 data=ffffffff
+# t=     14476 [TB_WRITE]: addr=00000000 data=00000001
+# t=     27675 [TB_READ]: addr=00000004 rdata=00000003
+# t=     27875 [TB_READ]: addr=00000008 rdata=00000000
+# ------------------------------------------------
+# t=     27875 PASSED: cnt matches expect value 
+# Actual:                    3
+# ------------------------------------------------
+# t=     27875 [TB_WRITE]: addr=00000000 data=00000000
+# check writing to counter when counting
+# t=     28076 [TB_WRITE]: addr=00000004 data=00000000
+# t=     28276 [TB_WRITE]: addr=00000008 data=00000000
+# t=     28476 [TB_WRITE]: addr=00000000 data=00000001
+# t=     41675 [TB_READ]: addr=00000004 rdata=00000103
+# t=     41875 [TB_READ]: addr=00000008 rdata=00000000
+# t=     41875 [TB_WRITE]: addr=00000004 data=ffffff00
+# t=     55075 [TB_READ]: addr=00000004 rdata=00000003
+# t=     55275 [TB_READ]: addr=00000008 rdata=00000001
+# ------------------------------------------------
+# t=     55275 PASSED: cnt matches expect value 
+# Actual:           4294967299
+# ------------------------------------------------
+# t=     55275 [TB_WRITE]: addr=00000000 data=00000000
+# check timer_en = 0, cnt is 0
+# t=     55675 [TB_READ]: addr=00000004 rdata=00000000
+# t=     55875 [TB_READ]: addr=00000008 rdata=00000000
+# --------------------------------------------------------
+# t=     55875 PASSED: cnt is 0 when timer_en is 0 
+# --------------------------------------------------------
+# t=     55875 [TB_WRITE]: addr=00000000 data=00000001
+# t=     69075 [TB_READ]: addr=00000004 rdata=00000103
+# t=     69275 [TB_READ]: addr=00000008 rdata=00000000
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 69375 ns  Iteration: 0  Instance: /test_bench

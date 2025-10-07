@@ -1,0 +1,65 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit apb_protocol_chk.ucdb; log -r /*;run -all} -l apb_protocol_chk.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit apb_protocol_chk.ucdb 
+#  log -r /* 
+# run -all 
+# =====================================
+# === Test Case: APB Protocol Test ====
+# =====================================
+# t=       100 [TB_WRITE]: addr=00000004 data=33333333
+# t=       475 [TB_READ]: addr=00000004 rdata=33333333
+# ------------------------------------------------
+# t=       475 PASS: rdata = 33333333 at addr 00000004 is correct
+# ------------------------------------------------
+# penable does not assert
+# t=       475 [TB_WRITE]: addr=00000004 data=55555555
+# t=       825 [TB_READ]: addr=00000004 rdata=33333333
+# ------------------------------------------------
+# t=       825 PASS: rdata = 33333333 at addr 00000004 is correct
+# ------------------------------------------------
+# t=       975 [TB_READ]: addr=00000004 rdata=00000000
+# ------------------------------------------------
+# t=       975 PASS: rdata = 00000000 at addr 00000004 is correct
+# ------------------------------------------------
+# psel does not assert
+# t=       975 [TB_WRITE]: addr=00000004 data=77777777
+# t=      1325 [TB_READ]: addr=00000004 rdata=33333333
+# ------------------------------------------------
+# t=      1325 PASS: rdata = 33333333 at addr 00000004 is correct
+# ------------------------------------------------
+# t=      1475 [TB_READ]: addr=00000004 rdata=00000000
+# ------------------------------------------------
+# t=      1475 PASS: rdata = 00000000 at addr 00000004 is correct
+# ------------------------------------------------
+# t=      1475 [TB_WRITE]: addr=00000004 data=99999999
+# t=      1875 [TB_READ]: addr=00000004 rdata=99999999
+# ------------------------------------------------
+# t=      1875 PASS: rdata = 99999999 at addr 00000004 is correct
+# ------------------------------------------------
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 1975 ns  Iteration: 0  Instance: /test_bench

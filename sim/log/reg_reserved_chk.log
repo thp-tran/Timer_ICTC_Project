@@ -1,0 +1,82 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit reg_reserved_chk.ucdb; log -r /*;run -all} -l reg_reserved_chk.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit reg_reserved_chk.ucdb 
+#  log -r /* 
+# run -all 
+# ====================================
+# ==== Test Case: check Reserved =====
+# ====================================
+# write to 0x4000_1FFC
+# t=       100 [TB_WRITE]: addr=40001ffc data=ffffffff
+# t=       475 [TB_READ]: addr=40001ffc rdata=00000000
+# ------------------------------------------------
+# t=       475 PASS: rdata = 00000000 at addr 40001ffc is correct
+# ------------------------------------------------
+# write to begin of reserved addr
+# t=       475 [TB_WRITE]: addr=00000020 data=ffffffff
+# t=       875 [TB_READ]: addr=00000020 rdata=00000000
+# ------------------------------------------------
+# t=       875 PASS: rdata = 00000000 at addr 00000020 is correct
+# ------------------------------------------------
+# t=       875 [TB_WRITE]: addr=00000020 data=ffffffff
+# t=      1275 [TB_READ]: addr=00000020 rdata=00000000
+# ------------------------------------------------
+# t=      1275 PASS: rdata = 00000000 at addr 00000020 is correct
+# ------------------------------------------------
+# t=      1275 [TB_WRITE]: addr=00000040 data=ffffffff
+# t=      1675 [TB_READ]: addr=00000040 rdata=00000000
+# ------------------------------------------------
+# t=      1675 PASS: rdata = 00000000 at addr 00000040 is correct
+# ------------------------------------------------
+# t=      1675 [TB_WRITE]: addr=00000080 data=ffffffff
+# t=      2075 [TB_READ]: addr=00000080 rdata=00000000
+# ------------------------------------------------
+# t=      2075 PASS: rdata = 00000000 at addr 00000080 is correct
+# ------------------------------------------------
+# t=      2075 [TB_WRITE]: addr=00000100 data=ffffffff
+# t=      2475 [TB_READ]: addr=00000100 rdata=00000000
+# ------------------------------------------------
+# t=      2475 PASS: rdata = 00000000 at addr 00000100 is correct
+# ------------------------------------------------
+# t=      2475 [TB_WRITE]: addr=00000200 data=ffffffff
+# t=      2875 [TB_READ]: addr=00000200 rdata=00000000
+# ------------------------------------------------
+# t=      2875 PASS: rdata = 00000000 at addr 00000200 is correct
+# ------------------------------------------------
+# t=      2875 [TB_WRITE]: addr=00000400 data=ffffffff
+# t=      3275 [TB_READ]: addr=00000400 rdata=00000000
+# ------------------------------------------------
+# t=      3275 PASS: rdata = 00000000 at addr 00000400 is correct
+# ------------------------------------------------
+# t=      3275 [TB_WRITE]: addr=00000800 data=ffffffff
+# t=      3675 [TB_READ]: addr=00000800 rdata=00000000
+# ------------------------------------------------
+# t=      3675 PASS: rdata = 00000000 at addr 00000800 is correct
+# ------------------------------------------------
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 3775 ns  Iteration: 0  Instance: /test_bench

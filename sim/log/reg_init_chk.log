@@ -1,0 +1,67 @@
+# vsim -assertdebug -coverage -do {coverage save -onexit reg_init_chk.ucdb; log -r /*;run -all} -l reg_init_chk.log -debugDB -c -voptargs=+access+cover=bcesft test_bench 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# ** Warning: ../tb/test_bench.v(66): (vopt-2241) Connection width does not match width of port 'tim_paddr'. The port definition is at: ../rtl/top.v(4).
+# 
+# ** Warning: [13] ../rtl/reg_file.v(106): (vopt-2708) Condition Coverage ignoring this statement: unsupported part select type, not a scalar
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit reg_init_chk.ucdb 
+#  log -r /* 
+# run -all 
+# ====================================
+# ==== Pat name: check reset value ===
+# ====================================
+# t=       275 [TB_READ]: addr=00000000 rdata=00000100
+# ------------------------------------------------
+# t=       275 PASS: rdata = 00000100 at addr 00000000 is correct
+# ------------------------------------------------
+# t=       475 [TB_READ]: addr=00000004 rdata=00000000
+# ------------------------------------------------
+# t=       475 PASS: rdata = 00000000 at addr 00000004 is correct
+# ------------------------------------------------
+# t=       675 [TB_READ]: addr=00000008 rdata=00000000
+# ------------------------------------------------
+# t=       675 PASS: rdata = 00000000 at addr 00000008 is correct
+# ------------------------------------------------
+# t=       875 [TB_READ]: addr=0000000c rdata=ffffffff
+# ------------------------------------------------
+# t=       875 PASS: rdata = ffffffff at addr 0000000c is correct
+# ------------------------------------------------
+# t=      1075 [TB_READ]: addr=00000010 rdata=ffffffff
+# ------------------------------------------------
+# t=      1075 PASS: rdata = ffffffff at addr 00000010 is correct
+# ------------------------------------------------
+# t=      1275 [TB_READ]: addr=00000014 rdata=00000000
+# ------------------------------------------------
+# t=      1275 PASS: rdata = 00000000 at addr 00000014 is correct
+# ------------------------------------------------
+# t=      1475 [TB_READ]: addr=00000018 rdata=00000000
+# ------------------------------------------------
+# t=      1475 PASS: rdata = 00000000 at addr 00000018 is correct
+# ------------------------------------------------
+# t=      1675 [TB_READ]: addr=0000001c rdata=00000000
+# ------------------------------------------------
+# t=      1675 PASS: rdata = 00000000 at addr 0000001c is correct
+# ------------------------------------------------
+# Test_result PASSED
+# ** Note: $finish    : ../tb/test_bench.v(94)
+#    Time: 1775 ns  Iteration: 0  Instance: /test_bench
