@@ -5,9 +5,7 @@
 ---
 
 ## 👤 Project Information
-- **Student:** Trần Hoàng Phương  
-- **Class:** <your class>  
-- **Instructor:** <instructor name>  
+- **Student:** Trần Hoàng Phương   
 
 ---
 
@@ -44,7 +42,7 @@ By configuring timer registers, the microcontroller can perform periodic operati
 
 ### 1.3. Block Diagram
 You can insert your diagrams here once you export them as images (e.g., from Word or PowerPoint):
-
+![Timer Block Diagram](docs/timer_block_diagram.png)
 ```markdown
 #### 🧱 Timer IP Block Diagram
 ![Timer Block Diagram](docs/timer_block_diagram.png)
