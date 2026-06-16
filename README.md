@@ -38,3 +38,33 @@ By configuring timer registers, the microcontroller can perform periodic operati
 ### 1.3. Block Diagram
 #### Timer IP Block Diagram
 ![Timer Block Diagram](docs/timer_block_diagram.png)
+
+---
+
+### 1.4. APB Slave Timing
+#### APB Write Transaction Timing Diagram
+![APB Slave Timing](docs/apb_slave_timing.png)
+
+The Timer IP communicates with the processor through the **APB (Advanced Peripheral Bus)** interface.  
+All register accesses (read/write) follow the APB protocol with **1 wait-state cycle**.
+
+**APB Transaction Phases:**
+
+1. **Setup Phase:**  
+   The master drives `psel`, `paddr`, `pwdata`, `pwrite`, and `pstrb`.  
+   `penable` remains low during this phase.
+
+2. **Access Phase:**  
+   The master asserts `penable` on the next clock cycle.  
+   The slave responds by asserting `pready` after **1 wait-state cycle**.
+
+3. **Completion:**  
+   When `pready` is high, the transfer is complete.  
+   For write transactions, data on `pwdata` is written to the target register.  
+   For read transactions, valid data appears on `prdata`.  
+   After completion, `psel` and `penable` are de-asserted, returning the bus to idle.
+
+**Key Characteristics:**
+- All transfers require **1 wait-state** (pready is asserted 1 cycle after penable).
+- `pready` is never asserted in the same cycle as `penable`.
+- `pslverr` is driven by the register file error signal (`err_en`) to indicate invalid access (e.g., unaligned address, reserved register).
