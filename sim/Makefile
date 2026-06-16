@@ -11,7 +11,7 @@ RADIX			?= decimal
 REGRESS_LIST	?= pat.list
 
 #==============================
-QUESTA_PATH=/mnt/c/questasim64_10.2c/win64
+QUESTA_PATH=/mnt/c/intelFPGA/20.1/modelsim_ase/win32aloem
 VLIB=$(QUESTA_PATH)/vlib.exe
 VMAP=$(QUESTA_PATH)/vmap.exe
 VLOG=$(QUESTA_PATH)/vlog.exe
@@ -26,16 +26,14 @@ all_cov: build_cov run_cov
 
 build:
 	mkdir -p log
-	cp -rf ../testcases/$(TESTNAME).v run_test.v
 	$(VLIB) work
 	$(VMAP) work work
-	$(VLOG)  -f compile.f | tee compile.log
+	$(VLOG) +define+TEST_$(TESTNAME) -f compile.f | tee compile.log
 build_cov:
 	mkdir -p log
-	cp -rf ../testcases/$(TESTNAME).v run_test.v
 	$(VLIB) work
 	$(VMAP) work work
-	$(VLOG) +cover=bcesft -f compile.f
+	$(VLOG) +define+TEST_$(TESTNAME) +cover=bcesft -f compile.f
 run:
 	$(VSIM) -debugDB -l $(TESTNAME).log -voptargs=+access -assertdebug -c $(TB_NAME) -do "log -r /*;run -all;"
 	cp $(TESTNAME).log ./log

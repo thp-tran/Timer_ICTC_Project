@@ -1,3 +1,4 @@
+#!/bin/csh
 set log = "rep.log"
 if (-f $log) then
     rm -rf $log

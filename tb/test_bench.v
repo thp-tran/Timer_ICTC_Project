@@ -75,7 +75,35 @@ module test_bench;
 
 
 
-    `include "run_test.v"
+    `ifdef TEST_reg_init_chk
+        `include "../testcases/reg_init_chk.v"
+    `elsif TEST_reg_rw_chk
+        `include "../testcases/reg_rw_chk.v"
+    `elsif TEST_reg_reserved_chk
+        `include "../testcases/reg_reserved_chk.v"
+    `elsif TEST_reg_1hot_chk
+        `include "../testcases/reg_1hot_chk.v"
+    `elsif TEST_reg_byte_access
+        `include "../testcases/reg_byte_access.v"
+    `elsif TEST_cnt_ctrl_chk
+        `include "../testcases/cnt_ctrl_chk.v"
+    `elsif TEST_cnt_counting_chk
+        `include "../testcases/cnt_counting_chk.v"
+    `elsif TEST_cnt_halt_chk
+        `include "../testcases/cnt_halt_chk.v"
+    `elsif TEST_interrupt_chk
+        `include "../testcases/interrupt_chk.v"
+    `elsif TEST_apb_protocol_chk
+        `include "../testcases/apb_protocol_chk.v"
+    `elsif TEST_apb_multiple_access
+        `include "../testcases/apb_multiple_access.v"
+    `elsif TEST_apb_unaligned_chk
+        `include "../testcases/apb_unaligned_chk.v"
+    `elsif TEST_apb_pslverr_chk
+        `include "../testcases/apb_pslverr_chk.v"
+    `else
+        `include "run_test.v"
+    `endif
   	
     initial begin 
   	  clk = 0;

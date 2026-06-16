@@ -1,0 +1,16 @@
+# Simulation outputs
+sim/work/
+sim/log/
+sim/*.log
+sim/*.wlf
+sim/*.ini
+sim/*.dbg
+sim/*.ucdb
+sim/run_test.v
+sim/rep.log
+sim/transcript
+sim/coverage/
+
+# OS
+Thumbs.db
+Desktop.ini
