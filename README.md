@@ -1,14 +1,10 @@
-# 🕒 TIMER IP – ADVANCED LEVEL
+# TIMER IP
 **Fundamental IC Design and Verification Course**  
 **IC Training Center Vietnam (ICTC)**  
 
 ---
 
-## 👤 Project Information
-- **Student:** Trần Hoàng Phương   
----
-
-## 🧭 1. Overview
+## 1. Overview
 
 ### 1.1. Introduction
 A **timer** is a hardware or software component that measures time intervals or generates precise timing events.  
@@ -40,5 +36,5 @@ By configuring timer registers, the microcontroller can perform periodic operati
 ---
 
 ### 1.3. Block Diagram
-#### 🧱 Timer IP Block Diagram
+#### Timer IP Block Diagram
 ![Timer Block Diagram](docs/timer_block_diagram.png)
